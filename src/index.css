@@ -1,0 +1,82 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-serif: 'Playfair Display', 'Cinzel', serif;
+    --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  }
+}
+
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+.font-sans {
+  font-family: var(--font-sans);
+}
+
+/* Glassmorphism & Custom Effects */
+.glass-panel {
+  background: rgba(24, 27, 36, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-panel-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-panel-hover:hover {
+  background: rgba(28, 32, 44, 0.85);
+  border-color: rgba(31, 209, 165, 0.35);
+  box-shadow: 0 12px 32px -8px rgba(31, 209, 165, 0.15);
+  transform: translateY(-2px);
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, #1FD1A5 0%, #00AEEF 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.bg-gradient-accent {
+  background: linear-gradient(135deg, #1FD1A5 0%, #00AEEF 100%);
+}
+
+.border-gradient {
+  border-image: linear-gradient(135deg, #1FD1A5, #00AEEF) 1;
+}
+
+.glow-accent {
+  box-shadow: 0 0 35px -5px rgba(31, 209, 165, 0.3);
+}
+
+.glow-accent-lg {
+  box-shadow: 0 0 60px -10px rgba(31, 209, 165, 0.4);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0F1117;
+}
+::-webkit-scrollbar-thumb {
+  background: #1F2432;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #1FD1A5;
+}
+
+@keyframes pulseGlow {
+  0%, 100% { opacity: 0.4; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(1.05); }
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 4s infinite ease-in-out;
+}

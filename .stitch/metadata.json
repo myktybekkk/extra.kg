@@ -1,0 +1,26 @@
+{
+  "name": "projects/extra-kg-landing-2026",
+  "projectId": "extra-kg-landing-2026",
+  "title": "extra.kg Landing Page",
+  "visibility": "PUBLIC",
+  "projectType": "PROJECT_DESIGN",
+  "origin": "STITCH",
+  "deviceType": "DESKTOP",
+  "designTheme": {
+    "colorMode": "DARK",
+    "font": "INTER",
+    "roundness": "ROUND_EIGHT",
+    "customColor": "#1FD1A5",
+    "saturation": 5
+  },
+  "screens": {
+    "index": {
+      "id": "screen-index-001",
+      "sourceScreen": "projects/extra-kg-landing-2026/screens/index",
+      "x": 0,
+      "y": 0,
+      "width": 1440,
+      "height": 4800
+    }
+  }
+}
