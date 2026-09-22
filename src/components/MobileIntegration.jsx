@@ -102,7 +102,7 @@ export default function MobileIntegration() {
                     <div>
                       <input
                         type="tel"
-                        placeholder="Телефон (+996 700 ...)"
+                        placeholder="Телефон (+996 555 ...)"
                         value={testPhone}
                         onChange={(e) => setTestPhone(e.target.value)}
                         className="w-full px-3.5 py-2.5 rounded-xl bg-white/5 border border-white/10 text-white placeholder-[#A8B0C0] text-xs focus:outline-none focus:border-[#1FD1A5]"

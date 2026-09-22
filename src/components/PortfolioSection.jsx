@@ -7,6 +7,17 @@ export default function PortfolioSection({ onOpenModal }) {
   const projects = [
     {
       id: 1,
+      category: 'ecommerce',
+      title: 'Торговый портал MAX.KG',
+      sphere: 'E-Commerce & Ритейл',
+      metrics: 'Реальный клиент • max.kg',
+      url: 'https://max.kg',
+      desc: 'Масштабная торговая площадка бытовой техники, электроники и товаров в Кыргызстане с каталогом, поиском и мобильной адаптацией.',
+      tags: ['Интернет-магазин', 'E-Commerce', 'Каталог', 'max.kg'],
+      imageBg: 'from-[#1FD1A5]/30 to-[#0F1117]'
+    },
+    {
+      id: 2,
       category: 'services',
       title: 'Сеть сервисных центров Bishkek Repair',
       sphere: 'Сфера услуг и ремонта',
@@ -16,22 +27,12 @@ export default function PortfolioSection({ onOpenModal }) {
       imageBg: 'from-cyan-900/40 to-[#0F1117]'
     },
     {
-      id: 2,
-      category: 'ecommerce',
-      title: 'Бренд одежды Aiperi Fashion',
-      sphere: 'E-Commerce & Ритейл',
-      metrics: 'Окупаемость за 1-й месяц',
-      desc: 'Интернет-магазин с приемом платежей через MBank и О!Деньги, быстрой фильтрацией размеров и синхронизацией с инстаграмом.',
-      tags: ['Интернет-магазин', 'MBank', 'Каталог'],
-      imageBg: 'from-[#1FD1A5]/20 to-[#0F1117]'
-    },
-    {
       id: 3,
       category: 'b2b',
       title: 'Оптовое оборудование KG Tech',
       sphere: 'B2B & Промышленность',
       metrics: 'Экономия 4 часов в день',
-      desc: 'Корпоративный сайт с прайс-листами, мультиязычностью (Кыргызский, Русский, Английский) и захватом контактов для смет.',
+      desc: 'Корпоративный сайт с прайс-листами, мультиязычностью (кыргызский, русский, английский) и захватом контактов для смет.',
       tags: ['Корпоративный сайт', '3 Языка', 'B2B'],
       imageBg: 'from-blue-900/40 to-[#0F1117]'
     },
@@ -41,7 +42,7 @@ export default function PortfolioSection({ onOpenModal }) {
       title: 'Медицинский центр MedPlus',
       sphere: 'Медицина & Здоровье',
       metrics: '+42% онлайн-записей',
-      desc: 'Строгий доверительный веб-ресурс с расписанием врачей, онлайн-записью в 2 клика и быстрой загрузкой за 1,1 секунды.',
+      desc: 'Строгий доверительный веб-ресурс с расписанием врачей, онлайн-записью в 2 клика и быстрой загрузкой за 1.1 секунды.',
       tags: ['Корпоративный сайт', 'Онлайн-запись', 'SEO'],
       imageBg: 'from-teal-900/40 to-[#0F1117]'
     }
@@ -60,14 +61,14 @@ export default function PortfolioSection({ onOpenModal }) {
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#1FD1A5]/10 border border-[#1FD1A5]/30 mb-4">
             <TrendingUp className="w-4 h-4 text-[#1FD1A5]" />
             <span className="text-xs font-semibold tracking-wider text-[#1FD1A5] uppercase">
-              Портфолио & Результаты
+              Портфолио & Проекты
             </span>
           </div>
           <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6">
             Реальные кейсы для бизнеса <span className="text-gradient">в Бишкеке</span>
           </h2>
           <p className="text-base text-[#A8B0C0] font-light">
-            Мы не просто делаем «красивую картинку», а создаем рабочий инструмент с измеримой выгодой для предпринимателя.
+            Мы создаем рабочие веб-ресурсы и сервисы с доказанным качеством для предпринимателей Кыргызстана.
           </p>
         </div>
 
@@ -76,8 +77,8 @@ export default function PortfolioSection({ onOpenModal }) {
           <div className="inline-flex p-1.5 rounded-2xl bg-white/5 border border-white/10 max-w-full">
             {[
               { id: 'all', label: 'Все проекты' },
-              { id: 'services', label: 'Услуги' },
               { id: 'ecommerce', label: 'E-Commerce' },
+              { id: 'services', label: 'Услуги' },
               { id: 'b2b', label: 'B2B & Опт' },
               { id: 'medical', label: 'Медицина' }
             ].map(tab => (
@@ -113,8 +114,18 @@ export default function PortfolioSection({ onOpenModal }) {
                   </span>
                 </div>
 
-                <h3 className="font-serif text-2xl font-bold text-white mb-3 group-hover:text-[#1FD1A5] transition-colors">
-                  {project.title}
+                <h3 className="font-serif text-2xl font-bold text-white mb-3 group-hover:text-[#1FD1A5] transition-colors flex items-center justify-between">
+                  <span>{project.title}</span>
+                  {project.url && (
+                    <a
+                      href={project.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[#1FD1A5] text-xs font-mono underline hover:text-white"
+                    >
+                      {project.url.replace('https://', '')} ↗
+                    </a>
+                  )}
                 </h3>
 
                 <p className="text-sm text-[#A8B0C0] leading-relaxed mb-6 font-light">
@@ -132,12 +143,12 @@ export default function PortfolioSection({ onOpenModal }) {
                 </div>
 
                 <a
-                  href={`https://wa.me/996700123456?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%BF%D0%BE%D0%BB%D1%83%D1%87%D0%B8%D1%82%D1%8C%20%D0%BF%D1%80%D0%B5%D0%B7%D0%B5%D0%BD%D1%82%D0%B0%D1%86%D0%B8%D1%8E%20%D0%B8%20%D0%B4%D0%B5%D0%BC%D0%BE%20%D0%BF%D0%BE%20%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D1%83%20${encodeURIComponent(project.title)}`}
+                  href={project.url || `https://wa.me/996555874455?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%BF%D0%BE%D0%BB%D1%83%D1%87%D0%B8%D1%82%D1%8C%20%D0%BF%D1%80%D0%B5%D0%B7%D0%B5%D0%BD%D1%82%D0%B0%D1%86%D0%B8%D1%8E%20%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D0%B0%20${encodeURIComponent(project.title)}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 text-xs font-bold text-[#1FD1A5] hover:underline"
                 >
-                  <span>Запросить презентацию решения в WhatsApp</span>
+                  <span>{project.url ? 'Перейти на живой сайт ↗' : 'Запросить презентацию решения в WhatsApp'}</span>
                   <ExternalLink className="w-3.5 h-3.5" />
                 </a>
               </div>

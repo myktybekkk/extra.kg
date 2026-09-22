@@ -21,7 +21,7 @@ export default function LeadModal({ isOpen, onClose }) {
 Хочу получить точную смету с фиксацией в договоре.`;
     
     setTimeout(() => {
-      window.open(`https://wa.me/996700123456?text=${encodeURIComponent(text)}`, '_blank');
+      window.open(`https://wa.me/996555874455?text=${encodeURIComponent(text)}`, '_blank');
       setSubmitted(false);
       onClose();
     }, 1200);
@@ -83,7 +83,7 @@ export default function LeadModal({ isOpen, onClose }) {
                 <input
                   type="tel"
                   required
-                  placeholder="+996 (700) 12-34-56"
+                  placeholder="+996 (555) 87-44-55"
                   value={phone}
                   onChange={(e) => setPhone(e.target.value)}
                   className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/15 text-white placeholder-[#A8B0C0]/60 text-sm focus:outline-none focus:border-[#1FD1A5]"

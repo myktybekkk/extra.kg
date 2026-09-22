@@ -48,7 +48,7 @@ export default function Hero({ onOpenModal }) {
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full sm:w-auto mb-10">
               <a
-                href="https://wa.me/996700123456?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%BF%D0%BE%D0%BB%D1%83%D1%87%D0%B8%D1%82%D1%8C%20%D1%80%D0%B0%D1%81%D1%87%D0%B5%D1%82%20%D1%81%D0%BC%D0%B5%D1%82%D1%8B%20%D0%BD%D0%B0%20%D1%81%D0%B0%D0%B9%D1%82"
+                href="https://wa.me/996555874455?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%BF%D0%BE%D0%BB%D1%83%D1%87%D0%B8%D1%82%D1%8C%20%D1%80%D0%B0%D1%81%D1%87%D0%B5%D1%82%20%D1%81%D0%BC%D0%B5%D1%82%D1%8B%20%D0%BD%D0%B0%20%D1%81%D0%B0%D0%B9%D1%82"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center gap-3 px-8 py-4 rounded-2xl bg-gradient-accent text-[#0F1117] font-bold text-base shadow-xl shadow-[#1FD1A5]/30 hover:shadow-[#1FD1A5]/50 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 group cursor-pointer"
@@ -151,7 +151,7 @@ export default function Hero({ onOpenModal }) {
                         <span className="text-[10px] text-[#25D366]">Пример лида</span>
                       </div>
                       <p className="text-xs text-white/90 mt-1 leading-snug">
-                        «Здравствуйте! Клиент желает заказать сайт под ключ. Номер для связи: +996 (700) 12-34-56»
+                        «Здравствуйте! Клиент желает заказать сайт под ключ. Номер для связи: +996 (555) 87-44-55»
                       </p>
                     </div>
                   </div>

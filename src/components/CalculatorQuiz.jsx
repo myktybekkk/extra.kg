@@ -204,7 +204,7 @@ export default function CalculatorQuiz() {
               {/* Action buttons */}
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <a
-                  href={`https://wa.me/996700123456?text=${getWhatsAppMessage()}`}
+                  href={`https://wa.me/996555874455?text=${getWhatsAppMessage()}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full sm:w-auto px-8 py-4 rounded-2xl bg-gradient-accent text-[#0F1117] font-bold text-base shadow-xl shadow-[#1FD1A5]/30 hover:scale-[1.02] transition-all flex items-center justify-center gap-3 cursor-pointer"
