@@ -102,7 +102,7 @@ export default function MobileIntegration() {
                     <div>
                       <input
                         type="tel"
-                        placeholder="Телефон (+996 555 ...)"
+                        placeholder="Телефон (+996 700 ...)"
                         value={testPhone}
                         onChange={(e) => setTestPhone(e.target.value)}
                         className="w-full px-3.5 py-2.5 rounded-xl bg-white/5 border border-white/10 text-white placeholder-[#A8B0C0] text-xs focus:outline-none focus:border-[#1FD1A5]"
@@ -114,7 +114,7 @@ export default function MobileIntegration() {
                       className="w-full py-3 rounded-xl bg-[#25D366] hover:bg-[#20ba5a] text-white font-bold text-xs flex items-center justify-center gap-2 shadow-md transition-all cursor-pointer"
                     >
                       <Send className="w-3.5 h-3.5" />
-                      <span>Отправить тестовый лид</span>
+                      <span>Протестировать отправку заявки</span>
                     </button>
                   </form>
                 ) : (
@@ -122,15 +122,15 @@ export default function MobileIntegration() {
                   <div className="p-4 rounded-2xl bg-[#25D366]/15 border border-[#25D366]/40 animate-fade-in">
                     <div className="flex items-center justify-between mb-2">
                       <span className="text-xs font-bold text-[#25D366] flex items-center gap-1">
-                        <CheckCheck className="w-4 h-4" /> Доставлено в WhatsApp!
+                        <CheckCheck className="w-4 h-4" /> Имитация: Заявка в WhatsApp!
                       </span>
                       <span className="text-[10px] text-[#A8B0C0] font-mono">Только что</span>
                     </div>
                     <p className="text-xs text-white leading-relaxed">
-                      «Новый заказ от <strong>{testName}</strong> ({testPhone}). Клиент хочет сайт за 14 дней!»
+                      «Новая заявка от <strong>{testName}</strong> ({testPhone}). Клиент интересуется разработкой!»
                     </p>
                     <div className="mt-3 text-[10px] text-[#A8B0C0] text-center border-t border-white/10 pt-2">
-                      Именно так ваш менеджер будет получать реальные заявки за 1 секунду
+                      Так ваш менеджер будет мгновенно получать контакты целевых клиентов
                     </div>
                   </div>
                 )}

@@ -33,8 +33,8 @@ export default function Hero({ onOpenModal }) {
 
             {/* Main H1 Title */}
             <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-[1.15] mb-6">
-              Запустим сайт за 14 дней с{' '}
-              <span className="text-gradient underline decoration-[#1FD1A5]/40 underline-offset-8">
+              Запустим сайт от 7 до 14 дней с{' '}
+              <span className="text-gradient">
                 гарантией заявок в WhatsApp
               </span>
             </h1>
@@ -47,7 +47,7 @@ export default function Hero({ onOpenModal }) {
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full sm:w-auto mb-10">
               <a
-                href="https://wa.me/996555000000?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%BF%D0%BE%D0%BB%D1%83%D1%87%D0%B8%D1%82%D1%8C%20%D1%80%D0%B0%D1%81%D1%87%D0%B5%D1%82%20%D1%81%D0%BC%D0%B5%D1%82%D1%8B%20%D0%BD%D0%B0%20%D1%81%D0%B0%D0%B9%D1%82"
+                href="https://wa.me/996700123456?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%BF%D0%BE%D0%BB%D1%83%D1%87%D0%B8%D1%82%D1%8C%20%D1%80%D0%B0%D1%81%D1%87%D0%B5%D1%82%20%D1%81%D0%BC%D0%B5%D1%82%D1%8B%20%D0%BD%D0%B0%20%D1%81%D0%B0%D0%B9%D1%82"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center gap-3 px-8 py-4 rounded-2xl bg-gradient-accent text-[#0F1117] font-bold text-base shadow-xl shadow-[#1FD1A5]/30 hover:shadow-[#1FD1A5]/50 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 group cursor-pointer"
@@ -83,7 +83,7 @@ export default function Hero({ onOpenModal }) {
                 </div>
                 <div>
                   <div className="text-xl font-bold font-serif text-white">1% / день</div>
-                  <div className="text-xs text-[#A8B0C0]">неустойки за просрочку</div>
+                  <div className="text-xs text-[#A8B0C0]">неустойки от договора</div>
                 </div>
               </div>
 
@@ -119,14 +119,14 @@ export default function Hero({ onOpenModal }) {
                     <span className="text-xs font-mono text-[#A8B0C0] ml-1">extra.kg lead-engine</span>
                   </div>
                   <span className="text-[11px] px-2.5 py-1 rounded-full bg-[#1FD1A5]/20 text-[#1FD1A5] font-semibold border border-[#1FD1A5]/30">
-                    Live Demo
+                    Демо решения
                   </span>
                 </div>
 
                 {/* PageSpeed Guarantee Metric */}
                 <div className="mb-6 p-4 rounded-2xl bg-[#0F1117]/80 border border-white/10">
                   <div className="flex items-center justify-between mb-2">
-                    <span className="text-xs text-[#A8B0C0]">Скорость загрузки (Google Speed)</span>
+                    <span className="text-xs text-[#A8B0C0]">Целевая скорость (Google Speed test)</span>
                     <span className="text-xs font-bold text-[#1FD1A5]">98 / 100</span>
                   </div>
                   <div className="w-full h-2 rounded-full bg-white/10 overflow-hidden">
@@ -134,7 +134,7 @@ export default function Hero({ onOpenModal }) {
                   </div>
                   <div className="mt-2 text-[11px] text-[#A8B0C0] flex items-center gap-1.5">
                     <Zap className="w-3.5 h-3.5 text-[#1FD1A5]" />
-                    <span>Время до клика: 1.2 секунды</span>
+                    <span>Время загрузки страницы: ~1.2 секунды</span>
                   </div>
                 </div>
 
@@ -146,11 +146,11 @@ export default function Hero({ onOpenModal }) {
                     </div>
                     <div>
                       <div className="flex items-center justify-between gap-2">
-                        <span className="text-xs font-bold text-white">Новый лид с сайта!</span>
-                        <span className="text-[10px] text-[#25D366] font-mono">Только что</span>
+                        <span className="text-xs font-bold text-white">Уведомление в WhatsApp (Демо)</span>
+                        <span className="text-[10px] text-[#25D366]">Пример лида</span>
                       </div>
                       <p className="text-xs text-white/90 mt-1 leading-snug">
-                        «Здравствуйте! Клиент Нурбек хочет заказатъ Корпоративный сайт. Бюджет 45 000 сом. Телефон: +996 555 *** **»
+                        «Здравствуйте! Клиент желает заказать сайт под ключ. Номер для связи: +996 (700) 12-34-56»
                       </p>
                     </div>
                   </div>
@@ -164,11 +164,11 @@ export default function Hero({ onOpenModal }) {
                   </div>
                   <div className="flex items-center gap-2.5">
                     <CheckCircle2 className="w-4 h-4 text-[#1FD1A5] shrink-0" />
-                    <span>Мгновенная интеграция с CRM и WhatsApp</span>
+                    <span>Прямая интеграция с мессенджерами и CRM</span>
                   </div>
                   <div className="flex items-center gap-2.5">
                     <CheckCircle2 className="w-4 h-4 text-[#1FD1A5] shrink-0" />
-                    <span>Бесплатное видеообучение для сотрудника</span>
+                    <span>Видеоинструкция по самостоятельному ведению</span>
                   </div>
                 </div>
 

@@ -89,7 +89,7 @@ export default function CalculatorQuiz() {
           {step === 1 && (
             <div>
               <h3 className="font-serif text-xl sm:text-2xl font-bold text-white mb-6">
-                1. Какая сфера вашего бизнеса в Бишкеке?
+                1. Какая сфера вашего бизнеса?
               </h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {businessTypes.map((item) => (
@@ -197,14 +197,14 @@ export default function CalculatorQuiz() {
                 </div>
                 <div className="text-xs text-[#1FD1A5] font-semibold flex items-center justify-center gap-1.5">
                   <CheckCircle2 className="w-4 h-4" />
-                  <span>Гарантия запуск за 14 рабочих дней</span>
+                  <span>Гарантия запуска от 7 до 14 рабочих дней</span>
                 </div>
               </div>
 
               {/* Action buttons */}
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <a
-                  href={`https://wa.me/996555000000?text=${getWhatsAppMessage()}`}
+                  href={`https://wa.me/996700123456?text=${getWhatsAppMessage()}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full sm:w-auto px-8 py-4 rounded-2xl bg-gradient-accent text-[#0F1117] font-bold text-base shadow-xl shadow-[#1FD1A5]/30 hover:scale-[1.02] transition-all flex items-center justify-center gap-3 cursor-pointer"

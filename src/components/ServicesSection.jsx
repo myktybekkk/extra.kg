@@ -145,7 +145,7 @@ export default function ServicesSection({ onOpenModal }) {
                           <XCircle className="w-5 h-5 text-red-400 shrink-0 mt-0.5" />
                           <div>
                             <span className="text-xs font-bold text-red-400 uppercase tracking-wider block mb-1">
-                              Боль предпринимателя
+                              Типичная проблема устаревшего сайта
                             </span>
                             <p className="text-sm text-white/90 leading-relaxed font-light">
                               {service.pain}
@@ -175,7 +175,7 @@ export default function ServicesSection({ onOpenModal }) {
                   <div className="pt-6 border-t border-white/10 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4">
                     <div>
                       <span className="text-xs text-[#A8B0C0] uppercase tracking-wider block">
-                        Фиксированная цена под ключ
+                        Фиксированная цена по договору
                       </span>
                       <span className="text-3xl font-serif font-bold text-gradient">
                         {service.price}
@@ -183,7 +183,7 @@ export default function ServicesSection({ onOpenModal }) {
                     </div>
 
                     <a
-                      href={`https://wa.me/996555000000?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%98%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%83%D0%B5%D1%82%20%D1%82%D0%B0%D1%80%D0%B8%D1%84%20${encodeURIComponent(service.title)}`}
+                      href={`https://wa.me/996700123456?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%98%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%83%D0%B5%D1%82%20%D1%82%D0%B0%D1%80%D0%B8%D1%84%20${encodeURIComponent(service.title)}`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-gradient-accent text-[#0F1117] font-bold text-sm shadow-lg shadow-[#1FD1A5]/25 hover:scale-[1.02] transition-all cursor-pointer"

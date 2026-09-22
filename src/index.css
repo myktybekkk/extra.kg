@@ -2,17 +2,23 @@
 
 @layer base {
   :root {
-    --font-serif: 'Playfair Display', 'Cinzel', serif;
-    --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    --font-serif: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    --font-sans: 'Manrope', system-ui, -apple-system, sans-serif;
+  }
+  
+  body, button, input, select, textarea {
+    font-variant-numeric: lining-nums tabular-nums;
   }
 }
 
 .font-serif {
   font-family: var(--font-serif);
+  font-variant-numeric: lining-nums tabular-nums;
 }
 
 .font-sans {
   font-family: var(--font-sans);
+  font-variant-numeric: lining-nums tabular-nums;
 }
 
 /* Glassmorphism & Custom Effects */

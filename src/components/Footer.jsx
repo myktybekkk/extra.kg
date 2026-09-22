@@ -64,8 +64,8 @@ export default function Footer({ onOpenModal }) {
               </li>
               <li className="flex items-center gap-2.5">
                 <MessageSquare className="w-4 h-4 text-[#25D366] shrink-0 fill-current" />
-                <a href="https://wa.me/996555000000" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
-                  WhatsApp: +996 (555) 00-00-00
+                <a href="https://wa.me/996700123456" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
+                  WhatsApp: +996 (700) 12-34-56
                 </a>
               </li>
               <li className="flex items-center gap-2.5">
