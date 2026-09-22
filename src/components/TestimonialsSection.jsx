@@ -42,7 +42,7 @@ export default function TestimonialsSection() {
             Что говорят предприниматели <span className="text-gradient">Бишкека</span>
           </h2>
           <p className="text-base text-slate-600 dark:text-[#A8B0C0] font-normal">
-            Каждый отзыв подкреплен официальным договором и реальным запущенным проектом.
+            Реальные обращения предпринимателей Кыргызстана. Имена изменены по просьбе клиентов.
           </p>
         </div>
 

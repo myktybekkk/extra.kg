@@ -146,6 +146,14 @@ export default function Navbar({ onOpenModal, theme, onToggleTheme }) {
                 <span>Написать в WhatsApp</span>
               </a>
 
+              <a
+                href="tel:+996555874455"
+                className="flex items-center justify-center gap-2 py-3 rounded-xl bg-slate-100 dark:bg-white/5 text-slate-800 dark:text-white border border-slate-200 dark:border-white/10 font-bold text-sm"
+              >
+                <Phone className="w-5 h-5" />
+                <span>+996 555 874 455</span>
+              </a>
+
               <button
                 onClick={() => {
                   setMobileMenuOpen(false);

@@ -13,6 +13,7 @@ import TestimonialsSection from './components/TestimonialsSection';
 import FAQSection from './components/FAQSection';
 import Footer from './components/Footer';
 import LeadModal from './components/LeadModal';
+import { MessageSquare } from 'lucide-react';
 
 export default function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -79,6 +80,17 @@ export default function App() {
 
       {/* Footer */}
       <Footer onOpenModal={handleOpenModal} />
+
+      {/* Floating WhatsApp Button (mobile only) */}
+      <a
+        href="https://wa.me/996555874455?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%A5%D0%BE%D1%87%D1%83%20%D1%83%D0%B7%D0%BD%D0%B0%D1%82%D1%8C%20%D0%BE%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%D1%85"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Написать в WhatsApp"
+        className="md:hidden fixed bottom-6 right-6 z-40 w-14 h-14 rounded-full bg-[#25D366] text-white shadow-2xl flex items-center justify-center hover:scale-110 active:scale-95 transition-all duration-300"
+      >
+        <MessageSquare className="w-7 h-7 fill-current" />
+      </a>
 
       {/* Lead Calculation Modal */}
       <LeadModal isOpen={isModalOpen} onClose={handleCloseModal} />

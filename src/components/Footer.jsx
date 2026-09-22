@@ -70,7 +70,7 @@ export default function Footer({ onOpenModal }) {
               </li>
               <li className="flex items-center gap-2.5">
                 <Mail className="w-4 h-4 text-[#38BDF8] shrink-0" />
-                <span>info@extra.kg</span>
+                <a href="mailto:info@extra.kg" className="hover:text-white transition-colors">info@extra.kg</a>
               </li>
             </ul>
 
