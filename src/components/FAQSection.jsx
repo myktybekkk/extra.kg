@@ -1,80 +1,76 @@
 import React, { useState } from 'react';
-import { HelpCircle, ChevronDown, CheckCircle2 } from 'lucide-react';
+import { HelpCircle, ChevronDown } from 'lucide-react';
+
+const faqs = [
+  {
+    q: 'Оформляются ли домен, хостинг и доступы на меня?',
+    a: 'Да. 100% цифровых активов (домен .kg/.com, серверы, база данных и CMS) оформляются строго на ваш личный e-mail с первого дня разработки. Вы независимы от студии.',
+  },
+  {
+    q: 'Что будет, если вы задержите сдачу сайта?',
+    a: 'В официальном договоре зафиксирована конкретная дата сдачи и финансовая ответственность: 1% от суммы договора за каждый рабочий день просрочки по нашей вине.',
+  },
+  {
+    q: 'Придётся ли мне самому писать тексты и искать фото?',
+    a: 'Нет. Мы проводим 60-минутное интервью, после чего коммерческий редактор сам пишет продающую структуру и тексты, а также готовит перевод на кыргызский и английский.',
+  },
+  {
+    q: 'Смогу ли я менять цены или товары без программиста?',
+    a: 'Да. Мы передаём понятную панель управления и записываем именные видеоинструкции. Цену или новый товар можно добавить за 2 минуты.',
+  },
+  {
+    q: 'Какие способы онлайн-оплаты можно подключить?',
+    a: 'Интегрируем все популярные платёжные системы КР: MBank, О!Деньги, Элкарт, VISA, Mastercard. Подтверждения приходят сразу в WhatsApp.',
+  },
+  {
+    q: 'Предоставляете ли вы закрывающие документы для бухгалтерии?',
+    a: 'Да, работаем с физлицами (ИП) и юрлицами (ОсОО). Высылаем договоры, акты выполненных работ и счета-фактуры.',
+  },
+];
 
 export default function FAQSection() {
   const [openIndex, setOpenIndex] = useState(0);
 
-  const faqs = [
-    {
-      q: 'Оформляются ли домен, хостинг и доступы на меня?',
-      a: 'Да! 100% цифровых активов (домен .kg/.com, сервера, база данных и CMS) оформляются строго на ваш личный e-mail и имя с первого дня разработки. Вы независимы от веб-студии.'
-    },
-    {
-      q: 'Что будет, если вы задержите сдачу сайта?',
-      a: 'В официальном договоре зафиксирована конкретная дата сдачи и пункт о финансовой ответственности: 1% от общей суммы договора за каждый рабочий день просрочки по нашей вине.'
-    },
-    {
-      q: 'Придется ли мне самостоятельно писать тексты и искать фото?',
-      a: 'Нет. Мы проводим 60-минутное интервью с вами, после чего коммерческий редактор сам пишет продающую структуру и тексты, а также готовит профессиональный перевод на кыргызский и английский языки.'
-    },
-    {
-      q: 'Смогу ли я сам менять цены или товары без программиста?',
-      a: 'Да! Мы передаем вам понятную панель управления и записываем пакет именных коротких видеоинструкций. Вы сможете сменить цену или добавить новый товар за 2 минуты.'
-    },
-    {
-      q: 'Какие способы онлайн-оплаты можно подключить?',
-      a: 'Интегрируем все популярные платежные системы Кыргызстана: MBank, О!Деньги, Элкарт, VISA, Mastercard. Заявки и подтверждения оплаты сразу приходят в ваш WhatsApp.'
-    },
-    {
-      q: 'Предоставляете ли вы закрывающие документы для бухгалтерии?',
-      a: 'Да, работаем как с физическими лицами (ИП), так и с юридическими компаниями (ОсОО). Высылаем официальные договоры, акты выполненных работ и счета-фактуры.'
-    }
-  ];
-
   return (
-    <section id="faq" className="py-20 bg-slate-100 dark:bg-[#0C0E14] transition-colors duration-300 relative">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+    <section id="faq" className="py-20 md:py-28 bg-white dark:bg-[#0B0F1A]">
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+
         {/* Header */}
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-teal-50 dark:bg-[#1FD1A5]/10 border border-teal-200 dark:border-[#1FD1A5]/30 mb-4">
-            <HelpCircle className="w-4 h-4 text-[#0D9488] dark:text-[#1FD1A5]" />
-            <span className="text-xs font-bold tracking-wider text-[#0D9488] dark:text-[#1FD1A5] uppercase">
-              Ответы на Вопросы
-            </span>
+        <div className="mb-12">
+          <div className="badge mb-4">
+            <HelpCircle className="w-3 h-3" />
+            FAQ
           </div>
-          <h2 className="font-serif text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white mb-4">
-            Часто задаваемые вопросы <span className="text-gradient">простым языком</span>
+          <h2 className="font-serif text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white mb-3 leading-tight">
+            Частые вопросы
           </h2>
-          <p className="text-sm sm:text-base text-slate-600 dark:text-[#A8B0C0] font-normal">
+          <p className="text-slate-500 dark:text-slate-400 text-lg">
             Отвечаем честно и без абстрактных терминов.
           </p>
         </div>
 
         {/* Accordions */}
-        <div className="space-y-4">
+        <div className="space-y-2.5">
           {faqs.map((faq, idx) => {
             const isOpen = openIndex === idx;
             return (
               <div
                 key={idx}
-                className="card-surface rounded-2xl border border-slate-200 dark:border-white/10 overflow-hidden transition-all shadow-sm"
+                className={`card overflow-hidden transition-all ${isOpen ? 'border-teal-200 dark:border-teal-700/40' : ''}`}
               >
                 <button
                   onClick={() => setOpenIndex(isOpen ? -1 : idx)}
-                  className="w-full p-6 text-left flex items-center justify-between gap-4 font-serif font-bold text-base sm:text-lg text-slate-900 dark:text-white hover:text-[#0D9488] dark:hover:text-[#1FD1A5] transition-colors cursor-pointer"
+                  className="w-full px-6 py-5 text-left flex items-center justify-between gap-4 font-serif font-semibold text-base text-slate-900 dark:text-white hover:text-teal-600 dark:hover:text-[#1FD1A5] transition-colors cursor-pointer"
                 >
                   <span>{faq.q}</span>
                   <ChevronDown
-                    className={`w-5 h-5 text-[#0D9488] dark:text-[#1FD1A5] shrink-0 transition-transform duration-300 ${
-                      isOpen ? 'rotate-180' : ''
-                    }`}
+                    className={`w-5 h-5 text-teal-500 shrink-0 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}
                   />
                 </button>
 
                 {isOpen && (
-                  <div className="px-6 pb-6 pt-2 border-t border-slate-100 dark:border-white/5 text-sm text-slate-600 dark:text-[#A8B0C0] leading-relaxed font-normal">
-                    {faq.a}
+                  <div className="px-6 pb-5 pt-0 border-t border-[#E8ECF0] dark:border-white/8 text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                    <div className="pt-4">{faq.a}</div>
                   </div>
                 )}
               </div>

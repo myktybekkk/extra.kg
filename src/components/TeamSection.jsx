@@ -1,100 +1,99 @@
 import React from 'react';
-import { Users, Award, Code2, Layout, FileText, CheckCircle2 } from 'lucide-react';
+import { Users, CheckCircle2, Layout, Code2, FileText } from 'lucide-react';
+
+const masters = [
+  {
+    name: 'Азамат Ибраимов',
+    role: 'Ведущий продуктовый дизайнер',
+    icon: Layout,
+    image: '/azamat.png',
+    stat: '60+ UI/UX проектов',
+    desc: 'Спроектировал коммерческие интерфейсы для 60+ онлайн-сервисов Бишкека. Сокращает путь покупателя до клика.',
+  },
+  {
+    name: 'Бакыт Токтогулов',
+    role: 'Старший веб-разработчик',
+    icon: Code2,
+    image: '/bakyt.png',
+    stat: '85+ веб-проектов',
+    desc: 'С 2017 года запустил более 85 мобильных и десктопных систем. PageSpeed 90+ и отказоустойчивость.',
+  },
+  {
+    name: 'Динара Садыкова',
+    role: 'Коммерческий редактор',
+    icon: FileText,
+    image: '/dinara.png',
+    stat: '70+ B2B текстов',
+    desc: 'Написала продающие структуры для 70 компаний B2B. Освобождает предпринимателя от рутины.',
+  },
+];
 
 export default function TeamSection() {
-  const masters = [
-    {
-      name: 'Азамат Ибраимов',
-      role: 'Ведущий продуктовый дизайнер',
-      icon: Layout,
-      image: '/azamat.png',
-      stat: '60+ UI/UX проектов',
-      desc: 'Спроектировал коммерческие интерфейсы для 60+ онлайн-сервисов и магазинов Бишкека. Сократил путь покупателя до клика на оплату, увеличивая отклик посадочных страниц.'
-    },
-    {
-      name: 'Бакыт Токтогулов',
-      role: 'Старший веб-разработчик',
-      icon: Code2,
-      image: '/bakyt.png',
-      stat: '85+ веб-проектов',
-      desc: 'С 2017 года ввел в эксплуатацию более 85 мобильных и десктопных веб-систем. Обеспечивает показатели скорости 90+ в Google PageSpeed и отказоустойчивость.'
-    },
-    {
-      name: 'Динара Садыкова',
-      role: 'Коммерческий редактор и маркетолог',
-      icon: FileText,
-      image: '/dinara.png',
-      stat: '70+ B2B текстов',
-      desc: 'Написала продающие структуры для 70 компаний в сегментах B2B и услуг. Формирует офферы на основе реальных фактов бизнеса, освобождая предпринимателя от рутины.'
-    }
-  ];
-
   return (
-    <section id="team" className="py-20 bg-slate-100 dark:bg-[#0C0E14] transition-colors duration-300 relative">
+    <section id="team" className="py-20 md:py-28 bg-white dark:bg-[#0B0F1A]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-teal-50 dark:bg-[#1FD1A5]/10 border border-teal-200 dark:border-[#1FD1A5]/30 mb-4">
-            <Users className="w-4 h-4 text-[#0D9488] dark:text-[#1FD1A5]" />
-            <span className="text-xs font-bold tracking-wider text-[#0D9488] dark:text-[#1FD1A5] uppercase">
-              Команда Мастеров
-            </span>
+
+        {/* Header */}
+        <div className="max-w-2xl mb-14">
+          <div className="badge mb-4">
+            <Users className="w-3 h-3" />
+            Команда
           </div>
-          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-6">
-            За вашим проектом закреплены <span className="text-gradient">эксперты</span>
+          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-4 leading-tight">
+            За вашим проектом<br />
+            <span className="text-accent">закреплены эксперты</span>
           </h2>
-          <p className="text-base text-slate-600 dark:text-[#A8B0C0] font-normal">
-            Никаких стажеров или анонимных фрилансеров. Только проверенные специалисты с доказанными цифрами результатов.
+          <p className="text-slate-500 dark:text-slate-400 text-lg">
+            Никаких стажёров или анонимных фрилансеров — только специалисты с доказанными результатами.
           </p>
         </div>
 
-        {/* Team Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {masters.map((master, idx) => {
-            const IconComp = master.icon;
+        {/* Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+          {masters.map((m, idx) => {
+            const Icon = m.icon;
             return (
               <div
                 key={idx}
-                className="card-surface card-surface-hover p-6 rounded-3xl border border-slate-200 dark:border-white/10 flex flex-col justify-between group overflow-hidden relative"
+                className="card card-hover overflow-hidden group"
               >
-                <div>
-                  {/* Photo container */}
-                  <div className="relative mb-6 rounded-2xl overflow-hidden aspect-[4/3] bg-slate-200 dark:bg-white/5 border border-slate-200 dark:border-white/10">
-                    <img
-                      src={master.image}
-                      alt={master.name}
-                      className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 dark:from-[#0F1117] via-transparent to-transparent opacity-80" />
-                    
-                    {/* Stat badge */}
-                    <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between">
-                      <span className="px-3 py-1 rounded-full bg-[#0D9488] text-white dark:bg-[#1FD1A5] dark:text-[#0F1117] text-xs font-bold shadow-md">
-                        {master.stat}
-                      </span>
-                      <div className="w-8 h-8 rounded-full bg-white/90 dark:bg-[#0F1117]/80 backdrop-blur-md text-[#0D9488] dark:text-[#1FD1A5] flex items-center justify-center border border-slate-200 dark:border-white/10 shadow-sm">
-                        <IconComp className="w-4 h-4" />
-                      </div>
-                    </div>
+                {/* Photo */}
+                <div className="relative aspect-[4/3] overflow-hidden bg-slate-100 dark:bg-white/5">
+                  <img
+                    src={m.image}
+                    alt={m.name}
+                    className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                    onError={(e) => {
+                      e.target.style.display = 'none';
+                      e.target.nextSibling.style.display = 'flex';
+                    }}
+                  />
+                  {/* Fallback avatar */}
+                  <div
+                    className="w-full h-full hidden items-center justify-center bg-[#F0FDFB] dark:bg-teal-900/20 text-teal-600 dark:text-[#1FD1A5]"
+                    style={{ display: 'none' }}
+                  >
+                    <Icon className="w-16 h-16" />
                   </div>
-
-                  {/* Info */}
-                  <h3 className="font-serif text-2xl font-bold text-slate-900 dark:text-white mb-1 group-hover:text-[#0D9488] dark:group-hover:text-[#1FD1A5] transition-colors">
-                    {master.name}
-                  </h3>
-                  <p className="text-xs text-[#0D9488] dark:text-[#1FD1A5] font-bold mb-4 font-mono">
-                    {master.role}
-                  </p>
-
-                  <p className="text-xs text-slate-600 dark:text-[#A8B0C0] leading-relaxed font-normal mb-6">
-                    {master.desc}
-                  </p>
+                  {/* Stat badge */}
+                  <div className="absolute bottom-3 left-3">
+                    <span className="px-3 py-1 rounded-full bg-teal-600 dark:bg-[#1FD1A5] text-white dark:text-[#0F1117] text-xs font-bold shadow">
+                      {m.stat}
+                    </span>
+                  </div>
                 </div>
 
-                <div className="pt-4 border-t border-slate-200 dark:border-white/10 flex items-center gap-2 text-[11px] text-slate-500 dark:text-[#A8B0C0] font-medium">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-[#0D9488] dark:text-[#1FD1A5]" />
-                  <span>Личный контроль в общем чате</span>
+                {/* Info */}
+                <div className="p-6">
+                  <h3 className="font-serif text-xl font-bold text-slate-900 dark:text-white mb-0.5 group-hover:text-teal-600 dark:group-hover:text-[#1FD1A5] transition-colors">
+                    {m.name}
+                  </h3>
+                  <p className="text-xs text-teal-600 dark:text-[#1FD1A5] font-bold font-mono mb-3">{m.role}</p>
+                  <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed mb-4">{m.desc}</p>
+                  <div className="flex items-center gap-2 text-xs text-slate-400 dark:text-slate-500">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-teal-500" />
+                    <span>Личный контроль в общем чате</span>
+                  </div>
                 </div>
               </div>
             );

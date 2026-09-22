@@ -38,47 +38,23 @@ export default function App() {
   const handleCloseModal = () => setIsModalOpen(false);
 
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-900 dark:bg-[#0A0D14] dark:text-white selection:bg-[#1FD1A5] selection:text-[#0F1117] transition-colors duration-300">
-      {/* Top Fixed Header with Theme Switcher */}
+    <div className="min-h-screen bg-white dark:bg-[#0B0F1A] text-slate-900 dark:text-slate-100 transition-colors duration-300">
       <Navbar onOpenModal={handleOpenModal} theme={theme} onToggleTheme={toggleTheme} />
 
-      {/* Main Content Flow */}
       <main>
-        {/* 1. Hero Section */}
         <Hero onOpenModal={handleOpenModal} />
-
-        {/* 2. Trust & Guarantees Section */}
         <TrustSection />
-
-        {/* 3. Services & Pricing Grid */}
         <ServicesSection onOpenModal={handleOpenModal} />
-
-        {/* 4. Interactive Budget Calculator */}
         <CalculatorQuiz />
-
-        {/* 5. Turnkey Content & Translation */}
         <ContentSection onOpenModal={handleOpenModal} />
-
-        {/* 6. 14-Day SLA Workflow Timeline */}
         <WorkflowSection onOpenModal={handleOpenModal} />
-
-        {/* 7. Mobile Speed & WhatsApp Simulator */}
         <MobileIntegration />
-
-        {/* 8. Portfolio & Case Studies */}
         <PortfolioSection onOpenModal={handleOpenModal} />
-
-        {/* 9. Masters / Team Section */}
         <TeamSection />
-
-        {/* 10. Real Bishkek Testimonials */}
         <TestimonialsSection />
-
-        {/* 11. FAQ Accordion */}
         <FAQSection />
       </main>
 
-      {/* Footer */}
       <Footer onOpenModal={handleOpenModal} />
 
       {/* Floating WhatsApp Button (mobile only) */}
@@ -87,12 +63,11 @@ export default function App() {
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Написать в WhatsApp"
-        className="md:hidden fixed bottom-6 right-6 z-40 w-14 h-14 rounded-full bg-[#25D366] text-white shadow-2xl flex items-center justify-center hover:scale-110 active:scale-95 transition-all duration-300"
+        className="md:hidden fixed bottom-6 right-5 z-40 w-14 h-14 rounded-full bg-[#25D366] text-white shadow-xl flex items-center justify-center hover:scale-110 active:scale-95 transition-all duration-200"
       >
         <MessageSquare className="w-7 h-7 fill-current" />
       </a>
 
-      {/* Lead Calculation Modal */}
       <LeadModal isOpen={isModalOpen} onClose={handleCloseModal} />
     </div>
   );
