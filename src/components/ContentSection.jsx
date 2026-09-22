@@ -7,92 +7,100 @@ export default function ContentSection({ onOpenModal }) {
       icon: Mic,
       step: '01',
       title: 'Интервью на 60 минут',
-      desc: 'Проводим понятное интервью с владельцем или менеджером. Вам не нужно заполнять анкеты — мы сами зададим все правильные вопросы.'
+      desc: 'Проводим понятное онлайн или личное интервью. Вам не нужно писать тексты или заполнять сложные брифы — мы сами зададим нужные вопросы.'
     },
     {
       icon: PenTool,
       step: '02',
       title: 'Коммерческий копирайтинг',
-      desc: 'Напишем убедительные заголовки, офферы и описание услуг на основе реальных фактов вашей компании без лишней воды.'
+      desc: 'Пишем сильные офферы, понятные заголовки и убедительные описания услуг на основе реальных фактов вашей компании.'
     },
     {
       icon: Camera,
       step: '03',
-      title: 'Оформление и медиа',
-      desc: 'Подберем и обработаем качественную графику, иконки и фото под единый стиль вашей ниши.'
+      title: 'Подбор графики и медиа',
+      desc: 'Подбираем и обрабатываем лицензионные фото, иконки и иллюстрации в едином премиальном стиле вашей сферы.'
     },
     {
       icon: Languages,
       step: '04',
-      title: 'Перевод на кыргызский и английский',
-      desc: 'Выполним грамотный перевод сайта носителями языка для охвата всей аудитории Кыргызстана и иностранных клиентов.'
+      title: 'Кыргызский и английский языки',
+      desc: 'Выполняем грамотный перевод носителями языка, чтобы сайт вызывал 100% доверие у всех жителей Кыргызстана и зарубежных партнёров.'
     }
   ];
 
   return (
-    <section className="py-20 bg-slate-100 dark:bg-[#0C0E14] transition-colors duration-300 relative">
+    <section className="py-20 md:py-28 bg-white dark:bg-gray-950 transition-colors duration-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-teal-50 dark:bg-[#1FD1A5]/10 border border-teal-200 dark:border-[#1FD1A5]/30 mb-4">
-            <PenTool className="w-4 h-4 text-[#0D9488] dark:text-[#1FD1A5]" />
-            <span className="text-xs font-bold tracking-wider text-[#0D9488] dark:text-[#1FD1A5] uppercase">
-              Контент & Тексты Под Ключ
+
+        {/* Section Header */}
+        <div className="max-w-3xl mb-14">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-teal-50 dark:bg-teal-950 border border-teal-200 dark:border-teal-800 mb-4">
+            <PenTool className="w-4 h-4 text-teal-600 dark:text-teal-400" />
+            <span className="text-xs font-bold tracking-widest text-teal-700 dark:text-teal-400 uppercase">
+              Контент под ключ
             </span>
           </div>
-          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-6">
-            Контент <span className="text-gradient">под ключ</span> — вам не придется писать тексты
+          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 dark:text-white leading-tight mb-4">
+            Вам не придётся<br />
+            <span className="text-teal-600 dark:text-teal-400">писать тексты для сайта</span>
           </h2>
-          <p className="text-base text-slate-600 dark:text-[#A8B0C0] font-normal">
-            Самая частая причина задержки сайтов — когда студия просит клиента «прислать тексты». Мы берем всю работу со смыслом и языками на себя.
+          <p className="text-base sm:text-lg text-slate-600 dark:text-slate-400 leading-relaxed">
+            Главная причина срыва сроков в веб-студиях — ожидание текстов от клиента. Мы берём всю работу со смыслом, структурой и языками полностью на себя.
           </p>
         </div>
 
-        {/* Steps Grid */}
+        {/* 4 Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
           {steps.map((item, idx) => {
-            const IconComponent = item.icon;
+            const Icon = item.icon;
             return (
               <div
                 key={idx}
-                className="card-surface p-6 rounded-3xl border border-slate-200 dark:border-white/10 relative hover:border-[#0D9488] dark:hover:border-[#1FD1A5]/40 transition-all group"
+                className="bg-slate-50 dark:bg-gray-900 border border-slate-200 dark:border-gray-800 rounded-3xl p-7 flex flex-col justify-between hover:border-teal-400 dark:hover:border-teal-600 transition-all duration-200"
               >
-                <div className="flex items-center justify-between mb-6">
-                  <div className="w-12 h-12 rounded-xl bg-[#0D9488] dark:bg-[#1FD1A5] text-white dark:text-[#0F1117] font-bold flex items-center justify-center shadow-md">
-                    <IconComponent className="w-6 h-6" />
+                <div>
+                  <div className="flex items-center justify-between mb-6">
+                    <div className="w-12 h-12 rounded-2xl bg-teal-50 dark:bg-teal-950 border border-teal-200 dark:border-teal-800 flex items-center justify-center text-teal-600 dark:text-teal-400">
+                      <Icon className="w-6 h-6" />
+                    </div>
+                    <span className="font-serif text-2xl font-black text-slate-300 dark:text-gray-700">
+                      {item.step}
+                    </span>
                   </div>
-                  <span className="font-serif text-2xl font-black text-slate-300 dark:text-white/20 group-hover:text-[#0D9488] dark:group-hover:text-[#1FD1A5] transition-colors">
-                    {item.step}
-                  </span>
-                </div>
 
-                <h3 className="font-serif text-lg font-bold text-slate-900 dark:text-white mb-2">
-                  {item.title}
-                </h3>
-                <p className="text-xs text-slate-600 dark:text-[#A8B0C0] leading-relaxed font-normal">
-                  {item.desc}
-                </p>
+                  <h3 className="font-serif text-lg font-bold text-slate-900 dark:text-white mb-2.5">
+                    {item.title}
+                  </h3>
+
+                  <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                    {item.desc}
+                  </p>
+                </div>
               </div>
             );
           })}
         </div>
 
-        {/* Callout quote */}
-        <div className="card-surface p-6 sm:p-8 rounded-2xl border border-teal-300 dark:border-[#1FD1A5]/30 max-w-4xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6 shadow-md">
+        {/* Highlight Callout */}
+        <div className="p-6 sm:p-8 rounded-2xl bg-teal-50/70 dark:bg-teal-950/30 border border-teal-200 dark:border-teal-800 flex flex-col sm:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-4">
-            <div className="w-12 h-12 rounded-full bg-teal-50 dark:bg-[#1FD1A5]/20 text-[#0D9488] dark:text-[#1FD1A5] flex items-center justify-center shrink-0">
+            <div className="w-12 h-12 rounded-2xl bg-white dark:bg-gray-900 border border-teal-200 dark:border-teal-800 flex items-center justify-center text-teal-600 dark:text-teal-400 shrink-0">
               <CheckCircle2 className="w-6 h-6" />
             </div>
             <div>
-              <div className="text-sm font-bold text-slate-900 dark:text-white">Вы экономите от 40 часов личного времени</div>
-              <div className="text-xs text-slate-600 dark:text-[#A8B0C0]">Мы не требуем готовых материалов — создаем всё с нуля</div>
+              <div className="text-base font-bold text-slate-900 dark:text-white">
+                Экономим от 40 часов личного времени владельца бизнеса
+              </div>
+              <div className="text-sm text-slate-600 dark:text-slate-400">
+                Запускаем сайт без волокиты — профессионально пишем, переводим и оформляем.
+              </div>
             </div>
           </div>
 
           <button
             onClick={onOpenModal}
-            className="px-6 py-3 rounded-xl bg-[#0D9488] hover:bg-[#0F766E] text-white dark:bg-white/5 dark:hover:bg-white/10 dark:text-white border border-transparent dark:border-white/15 text-xs font-bold whitespace-nowrap transition-all cursor-pointer shadow-md"
+            className="px-6 py-3 rounded-xl bg-teal-600 hover:bg-teal-700 text-white text-sm font-bold shadow-sm whitespace-nowrap transition-all cursor-pointer"
           >
             Заказать сайт с контентом →
           </button>

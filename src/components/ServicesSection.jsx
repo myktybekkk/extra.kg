@@ -1,62 +1,62 @@
 import React, { useState } from 'react';
-import { Rocket, Building2, ShoppingBag, CheckCircle, XCircle, MessageSquare, Sparkles } from 'lucide-react';
+import { Rocket, Building2, ShoppingBag, CheckCircle2, MessageSquare, ArrowRight, Check } from 'lucide-react';
 
 const services = [
   {
     id: 'landing',
     icon: Rocket,
-    title: 'Landing Page',
-    subtitle: 'Одностраничный сайт',
+    title: 'Landing Page (Одностраничный сайт)',
+    note: 'Идеально для быстрого запуска рекламы и лидогенерации',
     price: 'от 20 000 сом',
     term: '7–14 рабочих дней',
-    badge: 'Высокая конверсия',
-    pain: 'Деньги на рекламу уходят впустую — клиенты кликают, но закрывают страницу из-за долгой загрузки и невнятных текстов.',
-    result: 'Конверсионная посадочная страница: загрузка 1.2 с, продающий текст, кнопка WhatsApp.',
-    includes: [
-      'Продающая структура и тексты',
-      'UI/UX дизайн под вашу нишу',
-      'Мобильная адаптация 100%',
-      'Интеграция WhatsApp и Telegram',
-      'Базовая SEO-настройка и аналитика',
-      '100% доступов на ваше имя',
+    badge: 'Быстрый запуск',
+    pain: 'Клиенты переходят с рекламы, но закрывают страницу: сайт грузится дольше 3 секунд, текст шаблонный, нет удобной кнопки WhatsApp.',
+    result: 'Конверсионный сайт с быстрой загрузкой (1.2 с), понятными выгодами вашего продукта и мгновенным приёмом заявок в мессенджер.',
+    list: [
+      'Индивидуальный UI/UX дизайн под вашу нишу',
+      'Продающая структура и тексты на русском и кыргызском',
+      '100% удобство на экранах смартфонов',
+      'Прямая интеграция WhatsApp и приём заявок в Telegram',
+      'Базовая SEO-оптимизация и настройка аналитики',
+      '100% цифровых доступов оформляются на вас',
     ],
   },
   {
     id: 'corporate',
     icon: Building2,
-    title: 'Корпоративный сайт',
-    subtitle: 'С каталогом и CMS',
+    title: 'Корпоративный сайт с каталогом',
+    note: 'Для B2B-компаний, дистрибуции, клиник, услуг и производств',
     price: 'от 45 000 сом',
     term: '10–14 рабочих дней',
-    badge: 'Хит для B2B',
-    pain: 'Менеджеры тратят часы на отправку прайсов в личку, а сайт нельзя обновить без стороннего программиста.',
-    result: 'Полноценный сайт с каталогом, панелью управления и мультиязычностью.',
-    includes: [
-      'Каталог товаров/услуг с фильтрацией',
-      'Понятная CMS без абонплаты',
-      'Мультиязычность (рус / кыр / eng)',
-      'Кнопка «Скачать прайс» с захватом контактов',
-      'Видеоинструкция по редактированию',
-      'Гарантия 12 месяцев на исправление ошибок',
+    badge: 'Выбор бизнеса',
+    pain: 'Менеджеры вручную высылают прайс-листы в мессенджерах, а внести изменения в сайт невозможно без найма программиста.',
+    result: 'Многостраничный сайт с удобным каталогом, CMS-панелью для самостоятельного редактирования цен за 2 минуты и формой сбора контактов.',
+    list: [
+      'Каталог услуг или товаров с фильтрацией и поиском',
+      'Удобная CMS-панель (обновление цен без программиста)',
+      'Мультиязычность: кыргызский, русский, английский',
+      'Кнопка «Скачать оптовый прайс» с захватом номера',
+      'Видеоинструкции для сотрудников по работе с сайтом',
+      'Гарантийная поддержка 12 месяцев по договору',
     ],
   },
   {
     id: 'ecommerce',
     icon: ShoppingBag,
-    title: 'Интернет-магазин',
-    subtitle: 'Под ключ с оплатой',
+    title: 'Интернет-магазин с онлайн-оплатой',
+    note: 'Автоматизированные онлайн-продажи с подключением MBank и О!Деньги',
     price: 'от 65 000 сом',
     term: '14–20 рабочих дней',
-    badge: 'E-Commerce',
-    pain: 'Заказы теряются в переписках, клиенты уходят — нет возможности оплатить через мобильный банкинг.',
-    result: 'Автоматизированный магазин с MBank, О!Деньги, авторасчётом доставки и уведомлениями в WhatsApp.',
-    includes: [
-      'MBank, О!Деньги, VISA/Elcart',
-      'Синхронизация с 1С / МойСклад',
-      'Корзина, личный кабинет, промокоды',
-      'Уведомление менеджера в WhatsApp',
-      'Калькулятор доставки по Бишкеку',
-      'Обучение менеджеров',
+    badge: 'Full E-Commerce',
+    pain: 'Заказы теряются в хаосе переписок, покупатели уходят к конкурентам, так как не могут сразу оплатить товар через мобильный банкинг.',
+    result: 'Полноценный онлайн-магазин с приёмом платежей MBank, О!Деньги, Элкарт, расчётом доставки и отправкой заказов менеджеру в WhatsApp.',
+    list: [
+      'Подключение онлайн-оплаты: MBank, О!Деньги, Элкарт, VISA',
+      'Синхронизация каталога и остатков (1С, МойСклад, Excel)',
+      'Корзина, личный кабинет, система скидок и промокодов',
+      'Моментальные пуш-уведомления менеджерам в WhatsApp',
+      'Калькулятор стоимости доставки по Бишкеку и регионам КР',
+      'Обучение менеджеров работе с заказами и клиентами',
     ],
   },
 ];
@@ -64,97 +64,113 @@ const services = [
 export default function ServicesSection({ onOpenModal }) {
   const [active, setActive] = useState(0);
   const s = services[active];
-  const Icon = s.icon;
+  const SIcon = s.icon;
 
   return (
-    <section id="services" className="py-20 md:py-28 bg-white dark:bg-[#0B0F1A]">
+    <section id="services" className="py-20 md:py-28 bg-white dark:bg-gray-950 transition-colors duration-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        {/* Header */}
-        <div className="max-w-2xl mb-12">
-          <div className="badge mb-4">
-            <Sparkles className="w-3 h-3" />
-            Услуги и Тарифы
+        {/* Section Header */}
+        <div className="max-w-3xl mb-12">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-teal-50 dark:bg-teal-950 border border-teal-200 dark:border-teal-800 mb-4">
+            <Rocket className="w-4 h-4 text-teal-600 dark:text-teal-400" />
+            <span className="text-xs font-bold tracking-widest text-teal-700 dark:text-teal-400 uppercase">
+              Услуги и тарифы
+            </span>
           </div>
-          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-4 leading-tight">
-            Решения с фиксированной<br />
-            <span className="text-accent">ценой под ключ</span>
+          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 dark:text-white leading-tight mb-4">
+            Готовые решения с фиксированной<br />
+            <span className="text-teal-600 dark:text-teal-400">стоимостью под ключ</span>
           </h2>
-          <p className="text-slate-500 dark:text-slate-400 text-lg">
-            Решаем конкретную задачу бизнеса — лиды идут прямо в ваш рабочий чат.
+          <p className="text-base sm:text-lg text-slate-600 dark:text-slate-400 leading-relaxed">
+            В каждый тариф входит весь цикл: от структуры и написания текстов до мобильной вёрстки и передачи паролей.
           </p>
         </div>
 
-        {/* Tab Switcher */}
-        <div className="flex gap-2 mb-8 flex-wrap">
-          {services.map((service, idx) => {
-            const TabIcon = service.icon;
-            const isActive = active === idx;
+        {/* Tabs */}
+        <div className="flex flex-wrap gap-2.5 mb-8">
+          {services.map((item, idx) => {
+            const Icon = item.icon;
+            const isCurrent = active === idx;
             return (
               <button
-                key={service.id}
+                key={item.id}
+                type="button"
                 onClick={() => setActive(idx)}
-                className={`flex items-center gap-2.5 px-5 py-2.5 rounded-xl font-semibold text-sm transition-all duration-200 cursor-pointer ${
-                  isActive
-                    ? 'bg-teal-600 dark:bg-[#1FD1A5] text-white dark:text-[#0F1117] shadow-sm'
-                    : 'bg-[#F8FAFC] dark:bg-white/5 text-slate-600 dark:text-slate-400 border border-[#E8ECF0] dark:border-white/8 hover:border-teal-200 dark:hover:border-teal-700/30 hover:text-teal-700 dark:hover:text-[#1FD1A5]'
+                className={`flex items-center gap-2.5 px-6 py-3.5 rounded-2xl text-sm font-bold transition-all cursor-pointer ${
+                  isCurrent
+                    ? 'bg-teal-600 text-white shadow-sm ring-2 ring-teal-600/30'
+                    : 'bg-slate-100 dark:bg-gray-900 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-gray-800'
                 }`}
               >
-                <TabIcon className="w-4 h-4" />
-                <span>{service.title}</span>
+                <Icon className="w-4 h-4" />
+                <span>{item.title.split(' ')[0]} {item.title.split(' ')[1]}</span>
               </button>
             );
           })}
         </div>
 
-        {/* Content Card */}
-        <div className="card p-8 sm:p-10 rounded-3xl">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+        {/* Active Tariff Card */}
+        <div className="bg-slate-50 dark:bg-gray-900 border border-slate-200 dark:border-gray-800 rounded-3xl p-8 sm:p-12 shadow-sm">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14">
 
-            {/* Left */}
-            <div className="lg:col-span-7">
-              <div className="flex flex-wrap items-center gap-3 mb-5">
-                <span className="text-[11px] font-mono font-semibold text-slate-400 dark:text-slate-500 bg-slate-100 dark:bg-white/5 px-2.5 py-1 rounded-lg">
-                  {s.badge}
-                </span>
-                <span className="text-[11px] font-mono font-semibold text-slate-400 dark:text-slate-500">
-                  {s.term}
-                </span>
-              </div>
-
-              <h3 className="font-serif text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white mb-2">{s.title}</h3>
-              <p className="text-slate-500 dark:text-slate-400 text-sm mb-7">{s.subtitle}</p>
-
-              {/* Pain vs Result */}
-              <div className="space-y-3 mb-8">
-                <div className="flex items-start gap-3 p-4 rounded-2xl bg-rose-50 dark:bg-red-500/8 border border-rose-100 dark:border-red-500/15">
-                  <XCircle className="w-4 h-4 text-rose-400 shrink-0 mt-0.5" />
-                  <div>
-                    <span className="text-[10px] font-bold text-rose-400 uppercase tracking-wider block mb-1">Типичная проблема</span>
-                    <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">{s.pain}</p>
-                  </div>
+            {/* Left 7 cols: Description, Pain/Solution, Pricing */}
+            <div className="lg:col-span-7 flex flex-col justify-between">
+              <div>
+                <div className="flex flex-wrap items-center gap-3 mb-5">
+                  <span className="px-3.5 py-1 rounded-full bg-teal-100 dark:bg-teal-950 text-teal-800 dark:text-teal-300 text-xs font-bold border border-teal-200 dark:border-teal-800">
+                    {s.badge}
+                  </span>
+                  <span className="text-xs font-mono font-bold text-slate-500 dark:text-slate-400">
+                    Срок: {s.term}
+                  </span>
                 </div>
 
-                <div className="flex items-start gap-3 p-4 rounded-2xl bg-[#F0FDFB] dark:bg-teal-900/15 border border-[#CCFBF1] dark:border-teal-700/25">
-                  <CheckCircle className="w-4 h-4 text-teal-500 shrink-0 mt-0.5" />
-                  <div>
-                    <span className="text-[10px] font-bold text-teal-600 dark:text-[#1FD1A5] uppercase tracking-wider block mb-1">Результат</span>
-                    <p className="text-sm text-slate-700 dark:text-white font-medium leading-relaxed">{s.result}</p>
+                <h3 className="font-serif text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white mb-2">
+                  {s.title}
+                </h3>
+                <p className="text-base text-slate-600 dark:text-slate-400 mb-8">
+                  {s.note}
+                </p>
+
+                {/* Problem & Solution Cards */}
+                <div className="space-y-4 mb-8">
+                  <div className="p-4 rounded-2xl bg-white dark:bg-gray-950 border border-slate-200 dark:border-gray-800">
+                    <div className="text-xs font-bold uppercase tracking-wider text-rose-600 dark:text-rose-400 mb-1.5">
+                      Типичная проблема сайтов:
+                    </div>
+                    <p className="text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+                      {s.pain}
+                    </p>
+                  </div>
+
+                  <div className="p-4 rounded-2xl bg-emerald-50/70 dark:bg-emerald-950/30 border border-emerald-200 dark:border-emerald-800/40">
+                    <div className="text-xs font-bold uppercase tracking-wider text-emerald-700 dark:text-emerald-400 mb-1.5 flex items-center gap-1.5">
+                      <CheckCircle2 className="w-4 h-4" /> Наше решение в extra.kg:
+                    </div>
+                    <p className="text-sm font-medium text-slate-800 dark:text-slate-200 leading-relaxed">
+                      {s.result}
+                    </p>
                   </div>
                 </div>
               </div>
 
-              {/* Price + CTA */}
-              <div className="pt-6 border-t border-[#E8ECF0] dark:border-white/8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+              {/* Price & Action */}
+              <div className="pt-6 border-t border-slate-200 dark:border-gray-800 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5">
                 <div>
-                  <span className="text-[11px] text-slate-400 uppercase tracking-wider font-semibold block mb-0.5">Фиксированная цена</span>
-                  <span className="font-serif text-3xl font-extrabold text-teal-600 dark:text-[#1FD1A5]">{s.price}</span>
+                  <div className="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-1">
+                    Фиксированная смета в договоре
+                  </div>
+                  <div className="font-serif text-3xl sm:text-4xl font-extrabold text-teal-700 dark:text-teal-400">
+                    {s.price}
+                  </div>
                 </div>
+
                 <a
-                  href={`https://wa.me/996555874455?text=${encodeURIComponent(`Здравствуйте! Интересует тариф: ${s.title}`)}`}
+                  href={`https://wa.me/996555874455?text=${encodeURIComponent(`Здравствуйте! Интересует тариф: ${s.title}. Хочу обсудить детали.`)}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2.5 px-6 py-3.5 rounded-xl bg-teal-600 hover:bg-teal-700 dark:bg-[#1FD1A5] dark:hover:bg-[#17B890] text-white dark:text-[#0F1117] font-bold text-sm shadow-sm hover:-translate-y-0.5 transition-all"
+                  className="flex items-center gap-2 px-7 py-3.5 rounded-xl bg-teal-600 hover:bg-teal-700 text-white font-bold text-sm shadow-sm transition-all hover:-translate-y-0.5"
                 >
                   <MessageSquare className="w-4 h-4 fill-current" />
                   <span>Обсудить в WhatsApp</span>
@@ -162,23 +178,32 @@ export default function ServicesSection({ onOpenModal }) {
               </div>
             </div>
 
-            {/* Right Checklist */}
-            <div className="lg:col-span-5 bg-[#F8FAFC] dark:bg-white/5 p-6 rounded-2xl border border-[#E8ECF0] dark:border-white/8">
-              <h4 className="font-serif text-base font-bold text-slate-900 dark:text-white mb-4">Что входит:</h4>
-              <ul className="space-y-3">
-                {s.includes.map((item, i) => (
-                  <li key={i} className="flex items-start gap-2.5 text-sm text-slate-600 dark:text-slate-400">
-                    <CheckCircle className="w-4 h-4 text-teal-500 shrink-0 mt-0.5" />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-              <div className="mt-6 pt-4 border-t border-[#E8ECF0] dark:border-white/8">
+            {/* Right 5 cols: What's included checklist */}
+            <div className="lg:col-span-5 bg-white dark:bg-gray-950 rounded-2xl p-7 border border-slate-200 dark:border-gray-800 shadow-sm flex flex-col justify-between">
+              <div>
+                <h4 className="font-serif text-lg font-bold text-slate-900 dark:text-white mb-6">
+                  Что включено в стоимость:
+                </h4>
+                <ul className="space-y-4">
+                  {s.list.map((item, idx) => (
+                    <li key={idx} className="flex items-start gap-3 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+                      <div className="w-5 h-5 rounded-full bg-teal-50 dark:bg-teal-950 text-teal-600 dark:text-teal-400 flex items-center justify-center shrink-0 mt-0.5 border border-teal-200 dark:border-teal-800">
+                        <Check className="w-3.5 h-3.5" />
+                      </div>
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="mt-8 pt-6 border-t border-slate-100 dark:border-gray-800">
                 <button
+                  type="button"
                   onClick={onOpenModal}
-                  className="text-xs text-teal-600 dark:text-[#1FD1A5] font-semibold hover:underline"
+                  className="text-sm font-bold text-teal-600 dark:text-teal-400 hover:underline flex items-center gap-1.5 cursor-pointer"
                 >
-                  Нужна индивидуальная сборка? Рассчитайте →
+                  <span>Индивидуальный функционал? Запросить расчёт</span>
+                  <ArrowRight className="w-4 h-4" />
                 </button>
               </div>
             </div>

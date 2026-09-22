@@ -17,58 +17,56 @@ import { MessageSquare } from 'lucide-react';
 
 export default function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  // Default is ALWAYS light — user can switch manually
   const [theme, setTheme] = useState(() => {
-    return localStorage.getItem('theme') || 'light';
+    const stored = localStorage.getItem('extra_kg_theme_v2');
+    return stored || 'light';
   });
 
   useEffect(() => {
+    const html = document.documentElement;
     if (theme === 'dark') {
-      document.documentElement.classList.add('dark');
+      html.classList.add('dark');
     } else {
-      document.documentElement.classList.remove('dark');
+      html.classList.remove('dark');
     }
-    localStorage.setItem('theme', theme);
+    localStorage.setItem('extra_kg_theme_v2', theme);
   }, [theme]);
 
-  const toggleTheme = () => {
-    setTheme(prev => (prev === 'light' ? 'dark' : 'light'));
-  };
-
-  const handleOpenModal = () => setIsModalOpen(true);
-  const handleCloseModal = () => setIsModalOpen(false);
+  const toggleTheme = () => setTheme(t => t === 'light' ? 'dark' : 'light');
 
   return (
-    <div className="min-h-screen bg-white dark:bg-[#0B0F1A] text-slate-900 dark:text-slate-100 transition-colors duration-300">
-      <Navbar onOpenModal={handleOpenModal} theme={theme} onToggleTheme={toggleTheme} />
+    <div className="min-h-screen bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100 transition-colors duration-300">
+      <Navbar onOpenModal={() => setIsModalOpen(true)} theme={theme} onToggleTheme={toggleTheme} />
 
       <main>
-        <Hero onOpenModal={handleOpenModal} />
+        <Hero onOpenModal={() => setIsModalOpen(true)} />
         <TrustSection />
-        <ServicesSection onOpenModal={handleOpenModal} />
+        <ServicesSection onOpenModal={() => setIsModalOpen(true)} />
         <CalculatorQuiz />
-        <ContentSection onOpenModal={handleOpenModal} />
-        <WorkflowSection onOpenModal={handleOpenModal} />
+        <ContentSection onOpenModal={() => setIsModalOpen(true)} />
+        <WorkflowSection onOpenModal={() => setIsModalOpen(true)} />
         <MobileIntegration />
-        <PortfolioSection onOpenModal={handleOpenModal} />
+        <PortfolioSection onOpenModal={() => setIsModalOpen(true)} />
         <TeamSection />
         <TestimonialsSection />
         <FAQSection />
       </main>
 
-      <Footer onOpenModal={handleOpenModal} />
+      <Footer onOpenModal={() => setIsModalOpen(true)} />
 
-      {/* Floating WhatsApp Button (mobile only) */}
+      {/* WhatsApp floating (mobile) */}
       <a
-        href="https://wa.me/996555874455?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%A5%D0%BE%D1%87%D1%83%20%D1%83%D0%B7%D0%BD%D0%B0%D1%82%D1%8C%20%D0%BE%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%D1%85"
+        href="https://wa.me/996555874455"
         target="_blank"
         rel="noopener noreferrer"
-        aria-label="Написать в WhatsApp"
-        className="md:hidden fixed bottom-6 right-5 z-40 w-14 h-14 rounded-full bg-[#25D366] text-white shadow-xl flex items-center justify-center hover:scale-110 active:scale-95 transition-all duration-200"
+        className="md:hidden fixed bottom-5 right-5 z-40 w-14 h-14 rounded-full bg-[#25D366] shadow-xl flex items-center justify-center hover:scale-110 active:scale-95 transition-transform duration-200"
+        aria-label="WhatsApp"
       >
-        <MessageSquare className="w-7 h-7 fill-current" />
+        <MessageSquare className="w-7 h-7 text-white fill-white" />
       </a>
 
-      <LeadModal isOpen={isModalOpen} onClose={handleCloseModal} />
+      <LeadModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </div>
   );
 }

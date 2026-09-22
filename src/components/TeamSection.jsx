@@ -1,98 +1,99 @@
 import React from 'react';
 import { Users, CheckCircle2, Layout, Code2, FileText } from 'lucide-react';
 
-const masters = [
+const team = [
   {
     name: 'Азамат Ибраимов',
     role: 'Ведущий продуктовый дизайнер',
     icon: Layout,
-    image: '/azamat.png',
+    img: '/azamat.png',
     stat: '60+ UI/UX проектов',
-    desc: 'Спроектировал коммерческие интерфейсы для 60+ онлайн-сервисов Бишкека. Сокращает путь покупателя до клика.',
+    desc: 'Спроектировал коммерческие интерфейсы для 60+ онлайн-сервисов Бишкека. Продумывает путь покупателя до одного клика на покупку.',
   },
   {
     name: 'Бакыт Токтогулов',
     role: 'Старший веб-разработчик',
     icon: Code2,
-    image: '/bakyt.png',
+    img: '/bakyt.png',
     stat: '85+ веб-проектов',
-    desc: 'С 2017 года запустил более 85 мобильных и десктопных систем. PageSpeed 90+ и отказоустойчивость.',
+    desc: 'Более 8 лет в разработке веб-платформ. Обеспечивает скорость 90+ в Google PageSpeed и надёжную интеграцию с WhatsApp и MBank.',
   },
   {
     name: 'Динара Садыкова',
-    role: 'Коммерческий редактор',
+    role: 'Коммерческий редактор и контент',
     icon: FileText,
-    image: '/dinara.png',
+    img: '/dinara.png',
     stat: '70+ B2B текстов',
-    desc: 'Написала продающие структуры для 70 компаний B2B. Освобождает предпринимателя от рутины.',
+    desc: 'Создала продающие смыслы и структуры для 70 компаний. Превращает сложные факты вашего бизнеса в убедительные выгоды для клиентов.',
   },
 ];
 
 export default function TeamSection() {
   return (
-    <section id="team" className="py-20 md:py-28 bg-white dark:bg-[#0B0F1A]">
+    <section id="team" className="py-20 md:py-28 bg-white dark:bg-gray-950 transition-colors duration-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        {/* Header */}
-        <div className="max-w-2xl mb-14">
-          <div className="badge mb-4">
-            <Users className="w-3 h-3" />
-            Команда
+        {/* Section Header */}
+        <div className="max-w-3xl mb-14">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-teal-50 dark:bg-teal-950 border border-teal-200 dark:border-teal-800 mb-4">
+            <Users className="w-4 h-4 text-teal-600 dark:text-teal-400" />
+            <span className="text-xs font-bold tracking-widest text-teal-700 dark:text-teal-400 uppercase">
+              Команда проекта
+            </span>
           </div>
-          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-4 leading-tight">
-            За вашим проектом<br />
-            <span className="text-accent">закреплены эксперты</span>
+          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 dark:text-white leading-tight mb-4">
+            За вашим сайтом<br />
+            <span className="text-teal-600 dark:text-teal-400">закреплены опытные эксперты</span>
           </h2>
-          <p className="text-slate-500 dark:text-slate-400 text-lg">
-            Никаких стажёров или анонимных фрилансеров — только специалисты с доказанными результатами.
+          <p className="text-base sm:text-lg text-slate-600 dark:text-slate-400 leading-relaxed">
+            Никаких стажёров или анонимных исполнителей. С вами работает команда с проверенным опытом реализации коммерческих проектов.
           </p>
         </div>
 
-        {/* Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-          {masters.map((m, idx) => {
+        {/* Team Cards Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-7">
+          {team.map((m, i) => {
             const Icon = m.icon;
             return (
               <div
-                key={idx}
-                className="card card-hover overflow-hidden group"
+                key={i}
+                className="group bg-slate-50 dark:bg-gray-900 border border-slate-200 dark:border-gray-800 rounded-3xl overflow-hidden hover:border-teal-400 dark:hover:border-teal-600 hover:-translate-y-1 transition-all duration-200 shadow-sm"
               >
-                {/* Photo */}
-                <div className="relative aspect-[4/3] overflow-hidden bg-slate-100 dark:bg-white/5">
+                {/* Photo container */}
+                <div className="relative aspect-[4/3] overflow-hidden bg-slate-200 dark:bg-gray-800">
                   <img
-                    src={m.image}
+                    src={m.img}
                     alt={m.name}
                     className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
                     onError={(e) => {
                       e.target.style.display = 'none';
-                      e.target.nextSibling.style.display = 'flex';
+                      e.target.nextElementSibling.style.display = 'flex';
                     }}
                   />
-                  {/* Fallback avatar */}
-                  <div
-                    className="w-full h-full hidden items-center justify-center bg-[#F0FDFB] dark:bg-teal-900/20 text-teal-600 dark:text-[#1FD1A5]"
-                    style={{ display: 'none' }}
-                  >
+                  <div style={{ display: 'none' }} className="absolute inset-0 items-center justify-center bg-teal-50 dark:bg-teal-950 text-teal-600">
                     <Icon className="w-16 h-16" />
                   </div>
-                  {/* Stat badge */}
                   <div className="absolute bottom-3 left-3">
-                    <span className="px-3 py-1 rounded-full bg-teal-600 dark:bg-[#1FD1A5] text-white dark:text-[#0F1117] text-xs font-bold shadow">
+                    <span className="px-3.5 py-1 rounded-full bg-teal-600 text-white text-xs font-bold shadow-md">
                       {m.stat}
                     </span>
                   </div>
                 </div>
 
                 {/* Info */}
-                <div className="p-6">
-                  <h3 className="font-serif text-xl font-bold text-slate-900 dark:text-white mb-0.5 group-hover:text-teal-600 dark:group-hover:text-[#1FD1A5] transition-colors">
+                <div className="p-7">
+                  <h3 className="font-serif text-xl font-bold text-slate-900 dark:text-white mb-1 group-hover:text-teal-600 dark:group-hover:text-teal-400 transition-colors">
                     {m.name}
                   </h3>
-                  <p className="text-xs text-teal-600 dark:text-[#1FD1A5] font-bold font-mono mb-3">{m.role}</p>
-                  <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed mb-4">{m.desc}</p>
-                  <div className="flex items-center gap-2 text-xs text-slate-400 dark:text-slate-500">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-teal-500" />
-                    <span>Личный контроль в общем чате</span>
+                  <div className="text-xs font-bold uppercase tracking-wider text-teal-700 dark:text-teal-400 mb-4">
+                    {m.role}
+                  </div>
+                  <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
+                    {m.desc}
+                  </p>
+                  <div className="flex items-center gap-2 pt-4 border-t border-slate-200 dark:border-gray-800 text-xs font-semibold text-slate-700 dark:text-slate-300">
+                    <CheckCircle2 className="w-4 h-4 text-teal-600 dark:text-teal-400" />
+                    <span>Прямой контакт в рабочем чате WhatsApp</span>
                   </div>
                 </div>
               </div>

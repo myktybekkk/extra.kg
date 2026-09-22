@@ -23,14 +23,13 @@
     <!-- Canonical -->
     <link rel="canonical" href="https://extra.kg/" />
 
-    <!-- Anti-FOUC: apply theme before React mounts -->
+    <!-- Anti-FOUC: apply saved theme before React loads -->
     <script>
       (function() {
         try {
-          var theme = localStorage.getItem('theme');
-          if (theme === 'dark') {
-            document.documentElement.classList.add('dark');
-          }
+          var t = localStorage.getItem('extra_kg_theme_v2');
+          if (t === 'dark') document.documentElement.classList.add('dark');
+          /* else: stays light (no class = light) */
         } catch(e) {}
       })();
     </script>

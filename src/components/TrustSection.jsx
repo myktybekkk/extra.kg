@@ -1,108 +1,130 @@
 import React from 'react';
-import { ShieldCheck, Key, FileText, AlertCircle, CheckCircle } from 'lucide-react';
+import { ShieldCheck, Key, FileText, AlertCircle, CheckCircle2, X } from 'lucide-react';
 
 const cards = [
   {
     icon: Key,
-    label: '100% Права',
-    title: '100% прав на цифровые активы',
-    desc: 'Домен, хостинг, база данных и исходный код оформляются на ваше имя с первого дня. Вы получаете полный административный доступ.',
-    highlight: 'Все доступы — на ваш личный e-mail',
+    tag: '100% Права',
+    title: '100% цифровых прав на ваше имя',
+    body: 'Домен, хостинг, база данных, CMS и исходный код регистрируются строго на ваш личный e-mail с первого дня. Полный контроль — вы никогда не зависите от студии.',
+    foot: 'Все доступы и пароли — в вашем распоряжении',
   },
   {
     icon: AlertCircle,
-    label: 'Финансовый SLA',
-    title: '1% неустойки за день просрочки',
-    desc: 'Точный срок сдачи зафиксирован в договоре. В случае задержки по нашей вине — выплачиваем 1% от суммы за каждый рабочий день.',
-    highlight: 'Сдача за 7–14 рабочих дней по договору',
+    tag: 'Финансовый SLA',
+    title: '1% неустойки за день задержки',
+    body: 'Срок сдачи сайта (7–14 рабочих дней) зафиксирован в календарном плане договора. При нарушении дедлайна по нашей вине выплачиваем 1% за каждый день.',
+    foot: 'Чёткий дедлайн с гарантией в договоре',
   },
   {
     icon: FileText,
-    label: 'Прозрачная смета',
+    tag: 'Фиксированная смета',
     title: 'Окончательная цена без доплат',
-    desc: 'Никаких доплат за мобильную адаптацию, формы приёма заявок или привязку WhatsApp. Итоговая сумма зафиксирована в договоре.',
-    highlight: '0 сом скрытых платежей',
+    body: 'Никаких неожиданных счетов за мобильную версию, установку пикселей рекламы или привязку WhatsApp. Сумма в договоре является окончательной.',
+    foot: '0 сом скрытых доплат и платежей',
   },
   {
     icon: ShieldCheck,
-    label: 'Юридически чисто',
+    tag: 'Юридическая чистота',
     title: 'Официальный договор ОсОО / ИП',
-    desc: 'Предоставляем полный пакет закрывающих документов: акты выполненных работ, счета-фактуры. Работаем с юрлицами и тендерами.',
-    highlight: 'Полная бухгалтерская отчётность',
+    body: 'Предоставляем полный пакет закрывающих документов: договор, счёт-фактуру, акты выполненных работ. Работаем с компаниями любого масштаба.',
+    foot: 'Полная бухгалтерская и налоговая отчётность',
   },
 ];
 
-const compare = [
-  { aspect: 'Права и доступы', bad: 'Оформляют на студию', good: '100% на ваш e-mail' },
-  { aspect: 'Наполнение контентом', bad: 'Требуют готовые тексты', good: 'Контент под ключ + перевод' },
-  { aspect: 'Контроль дедлайнов', bad: 'Затягивают на 3–6 месяцев', good: '1% штраф за день просрочки' },
+const comparisons = [
+  { aspect: 'Права и доступы', bad: 'Оформляют на студию, при уходе требуют выкуп', good: '100% доступов на ваш личный e-mail с 1-го дня' },
+  { aspect: 'Контент сайта', bad: 'Требуют готовые тексты или берут доплату', good: 'Интервью 60 мин, копирайтинг и перевод включены' },
+  { aspect: 'Сроки и дедлайны', bad: 'Затягивают разработку на месяцы без ответственности', good: '1% финансовая неустойка за каждый день просрочки' },
 ];
 
 export default function TrustSection() {
   return (
-    <section id="trust" className="py-20 md:py-28 section-subtle dark:bg-[#0F1420]">
+    <section id="trust" className="py-20 md:py-28 bg-slate-50 dark:bg-gray-900 transition-colors duration-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        {/* Header */}
-        <div className="max-w-2xl mb-14">
-          <div className="badge mb-4">
-            <ShieldCheck className="w-3 h-3" />
-            Безопасность и Гарантии
+        {/* Section Header */}
+        <div className="max-w-3xl mb-14">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-teal-50 dark:bg-teal-950 border border-teal-200 dark:border-teal-800 mb-4">
+            <ShieldCheck className="w-4 h-4 text-teal-600 dark:text-teal-400" />
+            <span className="text-xs font-bold tracking-widest text-teal-700 dark:text-teal-400 uppercase">
+              Гарантии и юридическая защита
+            </span>
           </div>
-          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-4 leading-tight">
+          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 dark:text-white leading-tight mb-4">
             Ваш бизнес защищён<br />
-            <span className="text-accent">на 100%</span>
+            <span className="text-teal-600 dark:text-teal-400">официальным договором</span>
           </h2>
-          <p className="text-slate-500 dark:text-slate-400 text-lg leading-relaxed">
-            Зафиксировали ключевые опасения заказчиков Бишкека в официальном договоре.
+          <p className="text-base sm:text-lg text-slate-600 dark:text-slate-400 leading-relaxed">
+            Мы исключили главные риски заказчиков в Бишкеке: срывы сроков, потерю доступов и внезапный рост сметы в процессе работы.
           </p>
         </div>
 
-        {/* Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-12">
-          {cards.map((card, idx) => {
-            const Icon = card.icon;
+        {/* 4 Cards Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+          {cards.map((c, i) => {
+            const Icon = c.icon;
             return (
-              <div key={idx} className="card card-hover p-7 flex flex-col gap-4">
-                <div className="flex items-start justify-between">
-                  <div className="w-12 h-12 rounded-2xl bg-[#F0FDFB] dark:bg-teal-900/20 border border-[#CCFBF1] dark:border-teal-700/20 flex items-center justify-center text-teal-600 dark:text-[#1FD1A5]">
-                    <Icon className="w-5 h-5" />
-                  </div>
-                  <span className="text-[11px] font-mono font-semibold text-slate-400 dark:text-slate-500 bg-slate-100 dark:bg-white/5 px-2.5 py-1 rounded-lg">
-                    {card.label}
-                  </span>
-                </div>
-
+              <div
+                key={i}
+                className="bg-white dark:bg-gray-950 border border-slate-200 dark:border-gray-800 rounded-3xl p-8 flex flex-col justify-between hover:border-teal-400 dark:hover:border-teal-600 transition-all duration-200 shadow-sm"
+              >
                 <div>
-                  <h3 className="font-serif text-xl font-bold text-slate-900 dark:text-white mb-2">{card.title}</h3>
-                  <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">{card.desc}</p>
+                  <div className="flex items-center justify-between mb-5">
+                    <div className="w-12 h-12 rounded-2xl bg-teal-50 dark:bg-teal-950 border border-teal-200 dark:border-teal-800 flex items-center justify-center text-teal-600 dark:text-teal-400">
+                      <Icon className="w-6 h-6" />
+                    </div>
+                    <span className="text-xs font-bold font-mono px-3 py-1 rounded-full bg-slate-100 dark:bg-gray-800 text-slate-700 dark:text-slate-300">
+                      {c.tag}
+                    </span>
+                  </div>
+
+                  <h3 className="font-serif text-xl sm:text-2xl font-bold text-slate-900 dark:text-white mb-3">
+                    {c.title}
+                  </h3>
+
+                  <p className="text-base text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
+                    {c.body}
+                  </p>
                 </div>
 
-                <div className="pt-4 border-t border-[#E8ECF0] dark:border-white/8 flex items-center gap-2 text-sm font-semibold text-teal-600 dark:text-[#1FD1A5]">
-                  <CheckCircle className="w-4 h-4 shrink-0" />
-                  <span>{card.highlight}</span>
+                <div className="pt-4 border-t border-slate-100 dark:border-gray-800 flex items-center gap-2 text-sm font-semibold text-teal-700 dark:text-teal-400">
+                  <CheckCircle2 className="w-4 h-4 text-teal-600 dark:text-teal-400 shrink-0" />
+                  <span>{c.foot}</span>
                 </div>
               </div>
             );
           })}
         </div>
 
-        {/* Comparison */}
-        <div className="card p-8 rounded-3xl">
-          <h3 className="font-serif text-xl font-bold text-slate-900 dark:text-white mb-6 text-center">
-            extra.kg vs Обычная веб-студия
+        {/* Comparison Box */}
+        <div className="bg-white dark:bg-gray-950 border border-slate-200 dark:border-gray-800 rounded-3xl p-8 sm:p-10 shadow-sm">
+          <h3 className="font-serif text-2xl font-bold text-slate-900 dark:text-white text-center mb-8">
+            Почему клиенты выбирают extra.kg
           </h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            {compare.map(({ aspect, bad, good }) => (
-              <div key={aspect} className="p-5 rounded-2xl bg-[#F8FAFC] dark:bg-white/5 border border-[#E8ECF0] dark:border-white/8">
-                <div className="text-xs font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wide mb-3">{aspect}</div>
-                <div className="flex items-center gap-2 text-sm text-rose-500 mb-2">
-                  <span className="text-base">✕</span>
-                  <span>{bad}</span>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {comparisons.map((item, idx) => (
+              <div
+                key={idx}
+                className="p-6 rounded-2xl bg-slate-50 dark:bg-gray-900 border border-slate-200 dark:border-gray-800 flex flex-col justify-between"
+              >
+                <div>
+                  <div className="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-4">
+                    {item.aspect}
+                  </div>
+
+                  {/* Bad */}
+                  <div className="flex items-start gap-2.5 text-sm text-rose-600 dark:text-rose-400 mb-3.5 leading-snug">
+                    <X className="w-4 h-4 shrink-0 mt-0.5" />
+                    <span>{item.bad}</span>
+                  </div>
                 </div>
-                <div className="flex items-center gap-2 text-sm font-semibold text-teal-600 dark:text-[#1FD1A5]">
-                  <span className="text-base">✓</span>
-                  <span>{good}</span>
+
+                {/* Good */}
+                <div className="pt-3 border-t border-slate-200 dark:border-gray-800 flex items-start gap-2.5 text-sm font-semibold text-teal-700 dark:text-teal-400 leading-snug">
+                  <CheckCircle2 className="w-4 h-4 shrink-0 mt-0.5 text-teal-600 dark:text-teal-400" />
+                  <span>{item.good}</span>
                 </div>
               </div>
             ))}
