@@ -33,15 +33,16 @@ export default function Hero({ onOpenModal }) {
 
             {/* Main H1 Title */}
             <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-[1.15] mb-6">
-              Запустим сайт от 7 до 14 дней с{' '}
+              Запустим сайт за{' '}
               <span className="text-gradient">
-                гарантией заявок в WhatsApp
-              </span>
+                7–14 рабочих дней
+              </span>{' '}
+              с прямой отправкой заявок в WhatsApp
             </h1>
 
             {/* Subtitle */}
             <p className="text-base sm:text-lg text-[#A8B0C0] leading-relaxed mb-8 max-w-2xl font-light">
-              Фиксируем итоговую смету в договоре, передаем 100% прав на домен и хостинг с первого дня и подключаем прямую отправку лидов на ваш смартфон. <strong className="text-white font-medium">Без скрытых платежей за формы и доработки.</strong>
+              Фиксируем смету и сроки в договоре ОсОО/ИП, передаем 100% прав на домен и хостинг с первого дня и настраиваем мгновенный прием заявок на ваш смартфон. <strong className="text-white font-medium">Без скрытых платежей и доплат за формы.</strong>
             </p>
 
             {/* CTA Buttons */}
@@ -53,7 +54,7 @@ export default function Hero({ onOpenModal }) {
                 className="flex items-center justify-center gap-3 px-8 py-4 rounded-2xl bg-gradient-accent text-[#0F1117] font-bold text-base shadow-xl shadow-[#1FD1A5]/30 hover:shadow-[#1FD1A5]/50 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 group cursor-pointer"
               >
                 <MessageSquare className="w-5 h-5 fill-current" />
-                <span>Получить расчет сметы в WhatsApp</span>
+                <span>Рассчитать смету в WhatsApp</span>
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </a>
 
@@ -61,7 +62,7 @@ export default function Hero({ onOpenModal }) {
                 onClick={onOpenModal}
                 className="flex items-center justify-center gap-2 px-6 py-4 rounded-2xl bg-white/5 hover:bg-white/10 text-white border border-white/15 font-semibold text-sm transition-all duration-300 cursor-pointer"
               >
-                <span>Калькулятор стоимости</span>
+                <span>Получить аудит ниши</span>
               </button>
             </div>
 
