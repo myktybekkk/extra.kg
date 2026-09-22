@@ -147,7 +147,7 @@ export default function Hero({ onOpenModal }) {
                     </div>
                     <div>
                       <div className="flex items-center justify-between gap-2">
-                        <span className="text-xs font-bold text-white">Уведомление в WhatsApp (Демо)</span>
+                        <span className="text-xs font-bold text-white">Пример уведомления в WhatsApp</span>
                         <span className="text-[10px] text-[#25D366]">Пример лида</span>
                       </div>
                       <p className="text-xs text-white/90 mt-1 leading-snug">
