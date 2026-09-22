@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import TrustSection from './components/TrustSection';
@@ -16,14 +16,30 @@ import LeadModal from './components/LeadModal';
 
 export default function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [theme, setTheme] = useState(() => {
+    return localStorage.getItem('theme') || 'light';
+  });
+
+  useEffect(() => {
+    if (theme === 'dark') {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+    localStorage.setItem('theme', theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme(prev => (prev === 'light' ? 'dark' : 'light'));
+  };
 
   const handleOpenModal = () => setIsModalOpen(true);
   const handleCloseModal = () => setIsModalOpen(false);
 
   return (
-    <div className="min-h-screen bg-[#0F1117] text-white selection:bg-[#1FD1A5] selection:text-[#0F1117]">
-      {/* Top Fixed Header */}
-      <Navbar onOpenModal={handleOpenModal} />
+    <div className="min-h-screen bg-slate-50 text-slate-900 dark:bg-[#0A0D14] dark:text-white selection:bg-[#1FD1A5] selection:text-[#0F1117] transition-colors duration-300">
+      {/* Top Fixed Header with Theme Switcher */}
+      <Navbar onOpenModal={handleOpenModal} theme={theme} onToggleTheme={toggleTheme} />
 
       {/* Main Content Flow */}
       <main>

@@ -11,7 +11,7 @@ export default function FAQSection() {
     },
     {
       q: 'Что будет, если вы задержите сдачу сайта?',
-      a: 'В официальном договоре зафиксирована конкретная дата сдачи и пункт о финансовой ответственности: 1% от стоимости проекта за каждый рабочий день просрочки по нашей вине.'
+      a: 'В официальном договоре зафиксирована конкретная дата сдачи и пункт о финансовой ответственности: 1% от общей суммы договора за каждый рабочий день просрочки по нашей вине.'
     },
     {
       q: 'Придется ли мне самостоятельно писать тексты и искать фото?',
@@ -32,21 +32,21 @@ export default function FAQSection() {
   ];
 
   return (
-    <section id="faq" className="py-20 bg-[#0C0E14] relative">
+    <section id="faq" className="py-20 bg-slate-100 dark:bg-[#0C0E14] transition-colors duration-300 relative">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#1FD1A5]/10 border border-[#1FD1A5]/30 mb-4">
-            <HelpCircle className="w-4 h-4 text-[#1FD1A5]" />
-            <span className="text-xs font-semibold tracking-wider text-[#1FD1A5] uppercase">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-teal-50 dark:bg-[#1FD1A5]/10 border border-teal-200 dark:border-[#1FD1A5]/30 mb-4">
+            <HelpCircle className="w-4 h-4 text-[#0D9488] dark:text-[#1FD1A5]" />
+            <span className="text-xs font-bold tracking-wider text-[#0D9488] dark:text-[#1FD1A5] uppercase">
               Ответы на Вопросы
             </span>
           </div>
-          <h2 className="font-serif text-3xl sm:text-4xl font-bold text-white mb-4">
+          <h2 className="font-serif text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white mb-4">
             Часто задаваемые вопросы <span className="text-gradient">простым языком</span>
           </h2>
-          <p className="text-sm sm:text-base text-[#A8B0C0] font-light">
+          <p className="text-sm sm:text-base text-slate-600 dark:text-[#A8B0C0] font-normal">
             Отвечаем честно и без абстрактных терминов.
           </p>
         </div>
@@ -58,22 +58,22 @@ export default function FAQSection() {
             return (
               <div
                 key={idx}
-                className="glass-panel rounded-2xl border border-white/10 overflow-hidden transition-all"
+                className="card-surface rounded-2xl border border-slate-200 dark:border-white/10 overflow-hidden transition-all shadow-sm"
               >
                 <button
                   onClick={() => setOpenIndex(isOpen ? -1 : idx)}
-                  className="w-full p-6 text-left flex items-center justify-between gap-4 font-serif font-bold text-base sm:text-lg text-white hover:text-[#1FD1A5] transition-colors cursor-pointer"
+                  className="w-full p-6 text-left flex items-center justify-between gap-4 font-serif font-bold text-base sm:text-lg text-slate-900 dark:text-white hover:text-[#0D9488] dark:hover:text-[#1FD1A5] transition-colors cursor-pointer"
                 >
                   <span>{faq.q}</span>
                   <ChevronDown
-                    className={`w-5 h-5 text-[#1FD1A5] shrink-0 transition-transform duration-300 ${
+                    className={`w-5 h-5 text-[#0D9488] dark:text-[#1FD1A5] shrink-0 transition-transform duration-300 ${
                       isOpen ? 'rotate-180' : ''
                     }`}
                   />
                 </button>
 
                 {isOpen && (
-                  <div className="px-6 pb-6 pt-2 border-t border-white/5 text-sm text-[#A8B0C0] leading-relaxed font-light">
+                  <div className="px-6 pb-6 pt-2 border-t border-slate-100 dark:border-white/5 text-sm text-slate-600 dark:text-[#A8B0C0] leading-relaxed font-normal">
                     {faq.a}
                   </div>
                 )}

@@ -3,14 +3,14 @@ import { MessageSquare, Phone, MapPin, Mail, ShieldCheck, Heart } from 'lucide-r
 
 export default function Footer({ onOpenModal }) {
   return (
-    <footer className="bg-[#0A0C10] border-t border-white/10 pt-16 pb-12 text-[#A8B0C0] relative">
+    <footer className="bg-slate-900 text-slate-300 dark:bg-[#0A0C10] dark:text-[#A8B0C0] border-t border-slate-800 dark:border-white/10 pt-16 pb-12 relative transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
           
           {/* Col 1: Brand & Requisites */}
           <div>
             <a href="#" className="flex items-center gap-3 mb-4 group">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-[#1FD1A5] to-[#00AEEF] p-0.5 shadow-lg shadow-[#1FD1A5]/20 overflow-hidden">
+              <div className="w-10 h-10 rounded-xl bg-white p-0.5 shadow-md overflow-hidden">
                 <img src="/logo.jpg" alt="extra.kg logo" className="w-full h-full object-cover rounded-[10px]" />
               </div>
               <span className="font-serif text-2xl font-bold tracking-tight text-white">
@@ -18,11 +18,11 @@ export default function Footer({ onOpenModal }) {
               </span>
             </a>
             
-            <p className="text-xs leading-relaxed mb-4 font-light">
+            <p className="text-xs leading-relaxed mb-4 font-normal text-slate-400 dark:text-[#A8B0C0]">
               Разработка продающих сайтов и автоматизация бизнеса в Бишкеке. 100% передача цифровых активов и юридические гарантии.
             </p>
 
-            <div className="text-[11px] font-mono text-[#A8B0C0]/70 space-y-1">
+            <div className="text-[11px] font-mono text-slate-400 dark:text-[#A8B0C0]/70 space-y-1">
               <div>Официальная разработка по договору</div>
               <div>ОсОО / ИП КР • ИНН 01203202110050</div>
             </div>
@@ -50,7 +50,7 @@ export default function Footer({ onOpenModal }) {
               <li><a href="#services" className="hover:text-[#1FD1A5] transition-colors">Корпоративный сайт (от 45 000 сом)</a></li>
               <li><a href="#services" className="hover:text-[#1FD1A5] transition-colors">Интернет-магазин (от 65 000 сом)</a></li>
               <li><a href="#services" className="hover:text-[#1FD1A5] transition-colors">Интеграция MBank & О!Деньги</a></li>
-              <li><a href="#services" className="hover:text-[#1FD1A5] transition-colors">Контент под ключ (Рус / Кыр / Eng)</a></li>
+              <li><a href="#services" className="hover:text-[#1FD1A5] transition-colors">Контент под ключ (рус / кыр / eng)</a></li>
             </ul>
           </div>
 
@@ -69,15 +69,15 @@ export default function Footer({ onOpenModal }) {
                 </a>
               </li>
               <li className="flex items-center gap-2.5">
-                <Mail className="w-4 h-4 text-[#00AEEF] shrink-0" />
+                <Mail className="w-4 h-4 text-[#38BDF8] shrink-0" />
                 <span>info@extra.kg</span>
               </li>
             </ul>
 
-            <div className="mt-6 pt-4 border-t border-white/10">
+            <div className="mt-6 pt-4 border-t border-slate-800 dark:border-white/10">
               <button
                 onClick={onOpenModal}
-                className="w-full py-2.5 rounded-xl bg-gradient-accent text-[#0F1117] font-bold text-xs shadow-md hover:scale-[1.02] transition-all cursor-pointer"
+                className="w-full py-2.5 rounded-xl bg-[#1FD1A5] text-[#0F1117] font-bold text-xs shadow-md hover:scale-[1.02] transition-all cursor-pointer"
               >
                 Рассчитать смету проекта →
               </button>
@@ -87,7 +87,7 @@ export default function Footer({ onOpenModal }) {
         </div>
 
         {/* Bottom copyright */}
-        <div className="pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-light">
+        <div className="pt-8 border-t border-slate-800 dark:border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-normal text-slate-400 dark:text-[#A8B0C0]">
           <div>
             © 2026 extra.kg • Все права защищены. Веб-студия в Бишкеке.
           </div>

@@ -31,7 +31,6 @@ export default function CalculatorQuiz() {
 
   const calculateEstimate = () => {
     const selectedGoal = goals.find((g) => g.id === answers.goal) || goals[0];
-    const selectedBusiness = businessTypes.find((b) => b.id === answers.businessType) || businessTypes[0];
     let total = selectedGoal.base;
     if (answers.languages === 'ru_kg') total += 5000;
     if (answers.languages === 'ru_kg_en') total += 12000;
@@ -49,37 +48,37 @@ export default function CalculatorQuiz() {
   };
 
   return (
-    <section id="calculator" className="py-20 bg-[#0F1117] relative">
+    <section id="calculator" className="py-20 bg-slate-50 dark:bg-[#0F1117] transition-colors duration-300 relative">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
         <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#1FD1A5]/10 border border-[#1FD1A5]/30 mb-4">
-            <Calculator className="w-4 h-4 text-[#1FD1A5]" />
-            <span className="text-xs font-semibold tracking-wider text-[#1FD1A5] uppercase">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-teal-50 dark:bg-[#1FD1A5]/10 border border-teal-200 dark:border-[#1FD1A5]/30 mb-4">
+            <Calculator className="w-4 h-4 text-[#0D9488] dark:text-[#1FD1A5]" />
+            <span className="text-xs font-bold tracking-wider text-[#0D9488] dark:text-[#1FD1A5] uppercase">
               Интерактивный Калькулятор
             </span>
           </div>
-          <h2 className="font-serif text-3xl sm:text-4xl font-bold text-white mb-4">
+          <h2 className="font-serif text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white mb-4">
             Рассчитайте точную смету за <span className="text-gradient">4 клика</span>
           </h2>
-          <p className="text-sm sm:text-base text-[#A8B0C0]">
+          <p className="text-sm sm:text-base text-slate-600 dark:text-[#A8B0C0] font-normal">
             Без IT-терминов: выберите ваши задачи, и мы сформируем прозрачную стоимость с фиксацией в договоре.
           </p>
         </div>
 
         {/* Quiz Box */}
-        <div className="glass-panel p-6 sm:p-10 rounded-3xl border border-white/15 shadow-2xl relative">
+        <div className="card-surface p-6 sm:p-10 rounded-3xl border border-slate-200 dark:border-white/15 shadow-xl relative">
           
           {/* Progress Bar */}
           <div className="mb-8">
-            <div className="flex justify-between items-center text-xs font-mono text-[#A8B0C0] mb-2">
+            <div className="flex justify-between items-center text-xs font-mono text-slate-500 dark:text-[#A8B0C0] mb-2 font-semibold">
               <span>Шаг {step} из 4</span>
               <span>{step * 25}% завершено</span>
             </div>
-            <div className="w-full h-2 rounded-full bg-white/10 overflow-hidden">
+            <div className="w-full h-2 rounded-full bg-slate-200 dark:bg-white/10 overflow-hidden">
               <div 
-                className="h-full bg-gradient-accent transition-all duration-500 ease-out"
+                className="h-full bg-[#0D9488] dark:bg-[#1FD1A5] transition-all duration-500 ease-out"
                 style={{ width: `${step * 25}%` }}
               />
             </div>
@@ -88,7 +87,7 @@ export default function CalculatorQuiz() {
           {/* Step 1: Business Type */}
           {step === 1 && (
             <div>
-              <h3 className="font-serif text-xl sm:text-2xl font-bold text-white mb-6">
+              <h3 className="font-serif text-xl sm:text-2xl font-bold text-slate-900 dark:text-white mb-6">
                 1. Какая сфера вашего бизнеса?
               </h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -100,14 +99,14 @@ export default function CalculatorQuiz() {
                     }}
                     className={`p-5 rounded-2xl border text-left transition-all cursor-pointer flex items-center gap-4 ${
                       answers.businessType === item.id
-                        ? 'bg-[#1FD1A5]/15 border-[#1FD1A5] text-white shadow-lg shadow-[#1FD1A5]/10'
-                        : 'bg-white/5 border-white/10 text-[#A8B0C0] hover:border-white/30'
+                        ? 'bg-teal-50 dark:bg-[#1FD1A5]/15 border-[#0D9488] dark:border-[#1FD1A5] text-slate-900 dark:text-white shadow-sm'
+                        : 'bg-white dark:bg-white/5 border-slate-200 dark:border-white/10 text-slate-600 dark:text-[#A8B0C0] hover:border-slate-300'
                     }`}
                   >
                     <span className="text-3xl">{item.icon}</span>
                     <div>
-                      <div className="font-bold text-base text-white">{item.label}</div>
-                      <div className="text-xs text-[#A8B0C0]">Адаптированные бизнес-сценарии</div>
+                      <div className="font-bold text-base text-slate-900 dark:text-white">{item.label}</div>
+                      <div className="text-xs text-slate-500 dark:text-[#A8B0C0]">Адаптированные бизнес-сценарии</div>
                     </div>
                   </button>
                 ))}
@@ -118,7 +117,7 @@ export default function CalculatorQuiz() {
           {/* Step 2: Goal */}
           {step === 2 && (
             <div>
-              <h3 className="font-serif text-xl sm:text-2xl font-bold text-white mb-6">
+              <h3 className="font-serif text-xl sm:text-2xl font-bold text-slate-900 dark:text-white mb-6">
                 2. Какова главная цель вашего сайта?
               </h3>
               <div className="space-y-4">
@@ -130,15 +129,15 @@ export default function CalculatorQuiz() {
                     }}
                     className={`w-full p-5 rounded-2xl border text-left transition-all cursor-pointer flex items-center justify-between ${
                       answers.goal === item.id
-                        ? 'bg-[#1FD1A5]/15 border-[#1FD1A5] text-white shadow-lg shadow-[#1FD1A5]/10'
-                        : 'bg-white/5 border-white/10 text-[#A8B0C0] hover:border-white/30'
+                        ? 'bg-teal-50 dark:bg-[#1FD1A5]/15 border-[#0D9488] dark:border-[#1FD1A5] text-slate-900 dark:text-white shadow-sm'
+                        : 'bg-white dark:bg-white/5 border-slate-200 dark:border-white/10 text-slate-600 dark:text-[#A8B0C0] hover:border-slate-300'
                     }`}
                   >
                     <div>
-                      <div className="font-bold text-base text-white mb-1">{item.label}</div>
-                      <div className="text-xs text-[#A8B0C0]">{item.desc}</div>
+                      <div className="font-bold text-base text-slate-900 dark:text-white mb-1">{item.label}</div>
+                      <div className="text-xs text-slate-500 dark:text-[#A8B0C0]">{item.desc}</div>
                     </div>
-                    <div className="font-serif font-bold text-[#1FD1A5] text-sm shrink-0 ml-4">
+                    <div className="font-serif font-bold text-[#0D9488] dark:text-[#1FD1A5] text-sm shrink-0 ml-4">
                       от {item.base.toLocaleString()} сом
                     </div>
                   </button>
@@ -150,7 +149,7 @@ export default function CalculatorQuiz() {
           {/* Step 3: Languages & Content */}
           {step === 3 && (
             <div>
-              <h3 className="font-serif text-xl sm:text-2xl font-bold text-white mb-6">
+              <h3 className="font-serif text-xl sm:text-2xl font-bold text-slate-900 dark:text-white mb-6">
                 3. Какая языковая адаптация и контент вам нужны?
               </h3>
               <div className="space-y-4">
@@ -162,12 +161,12 @@ export default function CalculatorQuiz() {
                     }}
                     className={`w-full p-5 rounded-2xl border text-left transition-all cursor-pointer ${
                       answers.languages === item.id
-                        ? 'bg-[#1FD1A5]/15 border-[#1FD1A5] text-white shadow-lg shadow-[#1FD1A5]/10'
-                        : 'bg-white/5 border-white/10 text-[#A8B0C0] hover:border-white/30'
+                        ? 'bg-teal-50 dark:bg-[#1FD1A5]/15 border-[#0D9488] dark:border-[#1FD1A5] text-slate-900 dark:text-white shadow-sm'
+                        : 'bg-white dark:bg-white/5 border-slate-200 dark:border-white/10 text-slate-600 dark:text-[#A8B0C0] hover:border-slate-300'
                     }`}
                   >
-                    <div className="font-bold text-base text-white mb-1">{item.label}</div>
-                    <div className="text-xs text-[#A8B0C0]">{item.desc}</div>
+                    <div className="font-bold text-base text-slate-900 dark:text-white mb-1">{item.label}</div>
+                    <div className="text-xs text-slate-500 dark:text-[#A8B0C0]">{item.desc}</div>
                   </button>
                 ))}
               </div>
@@ -177,27 +176,27 @@ export default function CalculatorQuiz() {
           {/* Step 4: Result summary */}
           {step === 4 && (
             <div className="text-center py-4">
-              <div className="w-16 h-16 rounded-full bg-[#1FD1A5]/20 text-[#1FD1A5] flex items-center justify-center mx-auto mb-4 border border-[#1FD1A5]/40">
+              <div className="w-16 h-16 rounded-full bg-teal-50 dark:bg-[#1FD1A5]/20 text-[#0D9488] dark:text-[#1FD1A5] flex items-center justify-center mx-auto mb-4 border border-teal-200 dark:border-[#1FD1A5]/40">
                 <Sparkles className="w-8 h-8" />
               </div>
-              <h3 className="font-serif text-2xl sm:text-3xl font-bold text-white mb-2">
+              <h3 className="font-serif text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white mb-2">
                 Предварительный расчет готов!
               </h3>
-              <p className="text-xs sm:text-sm text-[#A8B0C0] mb-6">
+              <p className="text-xs sm:text-sm text-slate-600 dark:text-[#A8B0C0] mb-6">
                 Смета фиксируется в официальном договоре. Без скрытых платежей.
               </p>
 
               {/* Price display */}
-              <div className="p-6 rounded-2xl bg-[#0F1117] border border-[#1FD1A5]/40 max-w-md mx-auto mb-8">
-                <div className="text-xs text-[#A8B0C0] uppercase tracking-wider mb-1">
+              <div className="p-6 rounded-2xl bg-slate-100 dark:bg-[#0F1117] border border-teal-200 dark:border-[#1FD1A5]/40 max-w-md mx-auto mb-8">
+                <div className="text-xs text-slate-500 dark:text-[#A8B0C0] uppercase tracking-wider mb-1 font-semibold">
                   Ориентировочный бюджет под ключ
                 </div>
-                <div className="text-4xl sm:text-5xl font-serif font-extrabold text-gradient mb-3">
+                <div className="text-4xl sm:text-5xl font-serif font-extrabold text-[#0D9488] dark:text-[#1FD1A5] mb-3">
                   ~{calculateEstimate().toLocaleString()} сом
                 </div>
-                <div className="text-xs text-[#1FD1A5] font-semibold flex items-center justify-center gap-1.5">
+                <div className="text-xs text-[#0D9488] dark:text-[#1FD1A5] font-bold flex items-center justify-center gap-1.5">
                   <CheckCircle2 className="w-4 h-4" />
-                  <span>Гарантия запуска от 7 до 14 рабочих дней</span>
+                  <span>Гарантия запуска за 7–14 рабочих дней</span>
                 </div>
               </div>
 
@@ -207,7 +206,7 @@ export default function CalculatorQuiz() {
                   href={`https://wa.me/996555874455?text=${getWhatsAppMessage()}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full sm:w-auto px-8 py-4 rounded-2xl bg-gradient-accent text-[#0F1117] font-bold text-base shadow-xl shadow-[#1FD1A5]/30 hover:scale-[1.02] transition-all flex items-center justify-center gap-3 cursor-pointer"
+                  className="w-full sm:w-auto px-8 py-4 rounded-2xl bg-[#0D9488] hover:bg-[#0F766E] text-white dark:bg-[#1FD1A5] dark:hover:bg-[#17B890] dark:text-[#0F1117] font-bold text-base shadow-lg hover:scale-[1.02] transition-all flex items-center justify-center gap-3 cursor-pointer"
                 >
                   <MessageSquare className="w-5 h-5 fill-current" />
                   <span>Зафиксировать смету в WhatsApp</span>
@@ -217,11 +216,11 @@ export default function CalculatorQuiz() {
           )}
 
           {/* Navigation Controls */}
-          <div className="mt-10 pt-6 border-t border-white/10 flex items-center justify-between">
+          <div className="mt-10 pt-6 border-t border-slate-200 dark:border-white/10 flex items-center justify-between">
             {step > 1 && step <= 4 ? (
               <button
                 onClick={() => setStep(step - 1)}
-                className="flex items-center gap-2 text-xs font-semibold text-[#A8B0C0] hover:text-white transition-colors cursor-pointer"
+                className="flex items-center gap-2 text-xs font-bold text-slate-600 dark:text-[#A8B0C0] hover:text-slate-900 dark:hover:text-white transition-colors cursor-pointer"
               >
                 <ChevronLeft className="w-4 h-4" />
                 <span>Назад</span>
@@ -231,7 +230,7 @@ export default function CalculatorQuiz() {
             {step < 4 && (
               <button
                 onClick={() => setStep(step + 1)}
-                className="flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-accent text-[#0F1117] font-bold text-xs sm:text-sm hover:scale-[1.02] transition-all cursor-pointer ml-auto"
+                className="flex items-center gap-2 px-6 py-3 rounded-xl bg-[#0D9488] dark:bg-[#1FD1A5] text-white dark:text-[#0F1117] font-bold text-xs sm:text-sm hover:scale-[1.02] transition-all cursor-pointer ml-auto"
               >
                 <span>Далее</span>
                 <ChevronRight className="w-4 h-4" />
